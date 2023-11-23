@@ -12,9 +12,12 @@ namespace DataAccessLayer
             var lista = new List<Modelo.Lugar>();
             using (var ctx = new AeropuertoEntitiesRodrigo())
             {
-                ctx.Lugar.ToList();
+                return ctx.Lugar.Select(lugar => new Modelo.Lugar() {
+                    LugarId = lugar.LugarId,
+                    Clave = lugar.Clave,
+                    Descripcion = lugar.Descripcion
+                }).ToList();
             }
-            return lista;
         }
     }
 }
