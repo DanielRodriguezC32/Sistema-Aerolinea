@@ -9,20 +9,12 @@ namespace DataAccessLayer
     {
         public static List<Modelo.Lugar> ListaLugares()
         {
-            try
+            var lista = new List<Modelo.Lugar>();
+            using (var ctx = new AeropuertoEntitiesRodrigo())
             {
-                var lista = new List<Modelo.Lugar>();
-                using (var ctx = new AeropuertoEntitiesRodrigo())
-                {
-                    ctx.Lugar.ToList();
-                }
-                return lista;
+                ctx.Lugar.ToList();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-                
-            }
+            return lista;
         }
     }
 }
