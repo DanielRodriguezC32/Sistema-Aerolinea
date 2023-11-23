@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AeropuertoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Lugar">
+          <Key>
+            <PropertyRef Name="LugarId" />
+          </Key>
+          <Property Name="LugarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="45" />
+          <Property Name="Clave" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Pago">
+          <Key>
+            <PropertyRef Name="PagoId" />
+          </Key>
+          <Property Name="PagoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="TipoPagoId" Type="int" Nullable="false" />
+          <Property Name="NumeroTarjeta" Type="varchar" MaxLength="1" />
+          <Property Name="CorreoPaypal" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Reservacion">
+          <Key>
+            <PropertyRef Name="ReservacionId" />
+          </Key>
+          <Property Name="ReservacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VueloId" Type="int" Nullable="false" />
+          <Property Name="TransaccionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoPago">
+          <Key>
+            <PropertyRef Name="TipoPagoId" />
+          </Key>
+          <Property Name="TipoPagoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Transaccion">
+          <Key>
+            <PropertyRef Name="TransaccionId" />
+          </Key>
+          <Property Name="TransaccionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PagoId" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="1" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="1" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Vuelo">
+          <Key>
+            <PropertyRef Name="VueloId" />
+          </Key>
+          <Property Name="VueloId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LugarOrigenId" Type="int" Nullable="false" />
+          <Property Name="LugarDestinoId" Type="int" Nullable="false" />
+          <Property Name="FechaSalida" Type="datetime" Nullable="false" />
+          <Property Name="NumeroPasajeros" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="VisaNecesitada" Type="bit" />
+          <Property Name="Habilitado" Type="bit" />
+        </EntityType>
+        <Association Name="Pago_TipoPagoId_FK">
+          <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="1" />
+          <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPago">
+              <PropertyRef Name="TipoPagoId" />
+            </Principal>
+            <Dependent Role="Pago">
+              <PropertyRef Name="TipoPagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Pago_UsuarioId_FK">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Pago">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reservacion_TransaccionId_FK">
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="1" />
+          <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transaccion">
+              <PropertyRef Name="TransaccionId" />
+            </Principal>
+            <Dependent Role="Reservacion">
+              <PropertyRef Name="TransaccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reservacion_VueloId_FK">
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="1" />
+          <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vuelo">
+              <PropertyRef Name="VueloId" />
+            </Principal>
+            <Dependent Role="Reservacion">
+              <PropertyRef Name="VueloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Transaccion_PagoId_FK">
+          <End Role="Pago" Type="Self.Pago" Multiplicity="1" />
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pago">
+              <PropertyRef Name="PagoId" />
+            </Principal>
+            <Dependent Role="Transaccion">
+              <PropertyRef Name="PagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Vuelo_LugarDestinoId_FK">
+          <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugar">
+              <PropertyRef Name="LugarId" />
+            </Principal>
+            <Dependent Role="Vuelo">
+              <PropertyRef Name="LugarDestinoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Vuelo_LugarOrigenId_FK">
+          <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugar">
+              <PropertyRef Name="LugarId" />
+            </Principal>
+            <Dependent Role="Vuelo">
+              <PropertyRef Name="LugarOrigenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AeropuertoModelStoreContainer">
+          <EntitySet Name="Lugar" EntityType="Self.Lugar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pago" EntityType="Self.Pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservacion" EntityType="Self.Reservacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoPago" EntityType="Self.TipoPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaccion" EntityType="Self.Transaccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vuelo" EntityType="Self.Vuelo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Pago_TipoPagoId_FK" Association="Self.Pago_TipoPagoId_FK">
+            <End Role="TipoPago" EntitySet="TipoPago" />
+            <End Role="Pago" EntitySet="Pago" />
+          </AssociationSet>
+          <AssociationSet Name="Pago_UsuarioId_FK" Association="Self.Pago_UsuarioId_FK">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Pago" EntitySet="Pago" />
+          </AssociationSet>
+          <AssociationSet Name="Reservacion_TransaccionId_FK" Association="Self.Reservacion_TransaccionId_FK">
+            <End Role="Transaccion" EntitySet="Transaccion" />
+            <End Role="Reservacion" EntitySet="Reservacion" />
+          </AssociationSet>
+          <AssociationSet Name="Reservacion_VueloId_FK" Association="Self.Reservacion_VueloId_FK">
+            <End Role="Vuelo" EntitySet="Vuelo" />
+            <End Role="Reservacion" EntitySet="Reservacion" />
+          </AssociationSet>
+          <AssociationSet Name="Transaccion_PagoId_FK" Association="Self.Transaccion_PagoId_FK">
+            <End Role="Pago" EntitySet="Pago" />
+            <End Role="Transaccion" EntitySet="Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="Vuelo_LugarDestinoId_FK" Association="Self.Vuelo_LugarDestinoId_FK">
+            <End Role="Lugar" EntitySet="Lugar" />
+            <End Role="Vuelo" EntitySet="Vuelo" />
+          </AssociationSet>
+          <AssociationSet Name="Vuelo_LugarOrigenId_FK" Association="Self.Vuelo_LugarOrigenId_FK">
+            <End Role="Lugar" EntitySet="Lugar" />
+            <End Role="Vuelo" EntitySet="Vuelo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AeropuertoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Lugar">
+          <Key>
+            <PropertyRef Name="LugarId" />
+          </Key>
+          <Property Name="LugarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vuelo" Relationship="Self.Vuelo_LugarDestinoId_FK" FromRole="Lugar" ToRole="Vuelo" />
+          <NavigationProperty Name="Vuelo1" Relationship="Self.Vuelo_LugarOrigenId_FK" FromRole="Lugar" ToRole="Vuelo" />
+        </EntityType>
+        <EntityType Name="Pago">
+          <Key>
+            <PropertyRef Name="PagoId" />
+          </Key>
+          <Property Name="PagoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="TipoPagoId" Type="Int32" Nullable="false" />
+          <Property Name="NumeroTarjeta" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CorreoPaypal" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TipoPago" Relationship="Self.Pago_TipoPagoId_FK" FromRole="Pago" ToRole="TipoPago" />
+          <NavigationProperty Name="Usuario" Relationship="Self.Pago_UsuarioId_FK" FromRole="Pago" ToRole="Usuario" />
+          <NavigationProperty Name="Transaccion" Relationship="Self.Transaccion_PagoId_FK" FromRole="Pago" ToRole="Transaccion" />
+        </EntityType>
+        <EntityType Name="Reservacion">
+          <Key>
+            <PropertyRef Name="ReservacionId" />
+          </Key>
+          <Property Name="ReservacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VueloId" Type="Int32" Nullable="false" />
+          <Property Name="TransaccionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Transaccion" Relationship="Self.Reservacion_TransaccionId_FK" FromRole="Reservacion" ToRole="Transaccion" />
+          <NavigationProperty Name="Vuelo" Relationship="Self.Reservacion_VueloId_FK" FromRole="Reservacion" ToRole="Vuelo" />
+        </EntityType>
+        <EntityType Name="TipoPago">
+          <Key>
+            <PropertyRef Name="TipoPagoId" />
+          </Key>
+          <Property Name="TipoPagoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pago" Relationship="Self.Pago_TipoPagoId_FK" FromRole="TipoPago" ToRole="Pago" />
+        </EntityType>
+        <EntityType Name="Transaccion">
+          <Key>
+            <PropertyRef Name="TransaccionId" />
+          </Key>
+          <Property Name="TransaccionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PagoId" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Pago" Relationship="Self.Transaccion_PagoId_FK" FromRole="Transaccion" ToRole="Pago" />
+          <NavigationProperty Name="Reservacion" Relationship="Self.Reservacion_TransaccionId_FK" FromRole="Transaccion" ToRole="Reservacion" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pago" Relationship="Self.Pago_UsuarioId_FK" FromRole="Usuario" ToRole="Pago" />
+        </EntityType>
+        <EntityType Name="Vuelo">
+          <Key>
+            <PropertyRef Name="VueloId" />
+          </Key>
+          <Property Name="VueloId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LugarOrigenId" Type="Int32" Nullable="false" />
+          <Property Name="LugarDestinoId" Type="Int32" Nullable="false" />
+          <Property Name="FechaSalida" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NumeroPasajeros" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="VisaNecesitada" Type="Boolean" />
+          <Property Name="Habilitado" Type="Boolean" />
+          <NavigationProperty Name="Lugar" Relationship="Self.Vuelo_LugarDestinoId_FK" FromRole="Vuelo" ToRole="Lugar" />
+          <NavigationProperty Name="Lugar1" Relationship="Self.Vuelo_LugarOrigenId_FK" FromRole="Vuelo" ToRole="Lugar" />
+          <NavigationProperty Name="Reservacion" Relationship="Self.Reservacion_VueloId_FK" FromRole="Vuelo" ToRole="Reservacion" />
+        </EntityType>
+        <Association Name="Vuelo_LugarDestinoId_FK">
+          <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugar">
+              <PropertyRef Name="LugarId" />
+            </Principal>
+            <Dependent Role="Vuelo">
+              <PropertyRef Name="LugarDestinoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Vuelo_LugarOrigenId_FK">
+          <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lugar">
+              <PropertyRef Name="LugarId" />
+            </Principal>
+            <Dependent Role="Vuelo">
+              <PropertyRef Name="LugarOrigenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Pago_TipoPagoId_FK">
+          <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="1" />
+          <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPago">
+              <PropertyRef Name="TipoPagoId" />
+            </Principal>
+            <Dependent Role="Pago">
+              <PropertyRef Name="TipoPagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Pago_UsuarioId_FK">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Pago">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Transaccion_PagoId_FK">
+          <End Role="Pago" Type="Self.Pago" Multiplicity="1" />
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pago">
+              <PropertyRef Name="PagoId" />
+            </Principal>
+            <Dependent Role="Transaccion">
+              <PropertyRef Name="PagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reservacion_TransaccionId_FK">
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="1" />
+          <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transaccion">
+              <PropertyRef Name="TransaccionId" />
+            </Principal>
+            <Dependent Role="Reservacion">
+              <PropertyRef Name="TransaccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reservacion_VueloId_FK">
+          <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="1" />
+          <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vuelo">
+              <PropertyRef Name="VueloId" />
+            </Principal>
+            <Dependent Role="Reservacion">
+              <PropertyRef Name="VueloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AeropuertoEntitiesRodrigo" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Lugar" EntityType="Self.Lugar" />
+          <EntitySet Name="Pago" EntityType="Self.Pago" />
+          <EntitySet Name="Reservacion" EntityType="Self.Reservacion" />
+          <EntitySet Name="TipoPago" EntityType="Self.TipoPago" />
+          <EntitySet Name="Transaccion" EntityType="Self.Transaccion" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="Vuelo" EntityType="Self.Vuelo" />
+          <AssociationSet Name="Vuelo_LugarDestinoId_FK" Association="Self.Vuelo_LugarDestinoId_FK">
+            <End Role="Lugar" EntitySet="Lugar" />
+            <End Role="Vuelo" EntitySet="Vuelo" />
+          </AssociationSet>
+          <AssociationSet Name="Vuelo_LugarOrigenId_FK" Association="Self.Vuelo_LugarOrigenId_FK">
+            <End Role="Lugar" EntitySet="Lugar" />
+            <End Role="Vuelo" EntitySet="Vuelo" />
+          </AssociationSet>
+          <AssociationSet Name="Pago_TipoPagoId_FK" Association="Self.Pago_TipoPagoId_FK">
+            <End Role="TipoPago" EntitySet="TipoPago" />
+            <End Role="Pago" EntitySet="Pago" />
+          </AssociationSet>
+          <AssociationSet Name="Pago_UsuarioId_FK" Association="Self.Pago_UsuarioId_FK">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Pago" EntitySet="Pago" />
+          </AssociationSet>
+          <AssociationSet Name="Transaccion_PagoId_FK" Association="Self.Transaccion_PagoId_FK">
+            <End Role="Pago" EntitySet="Pago" />
+            <End Role="Transaccion" EntitySet="Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="Reservacion_TransaccionId_FK" Association="Self.Reservacion_TransaccionId_FK">
+            <End Role="Transaccion" EntitySet="Transaccion" />
+            <End Role="Reservacion" EntitySet="Reservacion" />
+          </AssociationSet>
+          <AssociationSet Name="Reservacion_VueloId_FK" Association="Self.Reservacion_VueloId_FK">
+            <End Role="Vuelo" EntitySet="Vuelo" />
+            <End Role="Reservacion" EntitySet="Reservacion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AeropuertoModelStoreContainer" CdmEntityContainer="AeropuertoEntitiesRodrigo">
+          <EntitySetMapping Name="Lugar">
+            <EntityTypeMapping TypeName="AeropuertoModel.Lugar">
+              <MappingFragment StoreEntitySet="Lugar">
+                <ScalarProperty Name="LugarId" ColumnName="LugarId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pago">
+            <EntityTypeMapping TypeName="AeropuertoModel.Pago">
+              <MappingFragment StoreEntitySet="Pago">
+                <ScalarProperty Name="PagoId" ColumnName="PagoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="TipoPagoId" ColumnName="TipoPagoId" />
+                <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+                <ScalarProperty Name="CorreoPaypal" ColumnName="CorreoPaypal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservacion">
+            <EntityTypeMapping TypeName="AeropuertoModel.Reservacion">
+              <MappingFragment StoreEntitySet="Reservacion">
+                <ScalarProperty Name="ReservacionId" ColumnName="ReservacionId" />
+                <ScalarProperty Name="VueloId" ColumnName="VueloId" />
+                <ScalarProperty Name="TransaccionId" ColumnName="TransaccionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPago">
+            <EntityTypeMapping TypeName="AeropuertoModel.TipoPago">
+              <MappingFragment StoreEntitySet="TipoPago">
+                <ScalarProperty Name="TipoPagoId" ColumnName="TipoPagoId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaccion">
+            <EntityTypeMapping TypeName="AeropuertoModel.Transaccion">
+              <MappingFragment StoreEntitySet="Transaccion">
+                <ScalarProperty Name="TransaccionId" ColumnName="TransaccionId" />
+                <ScalarProperty Name="PagoId" ColumnName="PagoId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="AeropuertoModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vuelo">
+            <EntityTypeMapping TypeName="AeropuertoModel.Vuelo">
+              <MappingFragment StoreEntitySet="Vuelo">
+                <ScalarProperty Name="VueloId" ColumnName="VueloId" />
+                <ScalarProperty Name="LugarOrigenId" ColumnName="LugarOrigenId" />
+                <ScalarProperty Name="LugarDestinoId" ColumnName="LugarDestinoId" />
+                <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+                <ScalarProperty Name="NumeroPasajeros" ColumnName="NumeroPasajeros" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="VisaNecesitada" ColumnName="VisaNecesitada" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
