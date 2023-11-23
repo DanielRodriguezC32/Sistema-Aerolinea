@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DataBase;
 using System.Linq;
+using System;
 
 namespace DataAccessLayer
 {
@@ -8,12 +9,20 @@ namespace DataAccessLayer
     {
         public static List<Modelo.Lugar> ListaLugares()
         {
-            var lista = new List<Modelo.Lugar>();
-            using (var ctx = new AeropuertoEntitiesRodrigo())
+            try
             {
-                ctx.Lugar.ToList();
+                var lista = new List<Modelo.Lugar>();
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    ctx.Lugar.ToList();
+                }
+                return lista;
             }
-            return lista;
+            catch (Exception ex)
+            {
+                throw ex;
+                
+            }
         }
     }
 }
