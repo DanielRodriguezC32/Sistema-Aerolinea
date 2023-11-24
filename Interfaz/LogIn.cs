@@ -25,6 +25,10 @@ namespace Interfaz
 
         }
 
+        //para pruebas, estas dos variables son publicas para utilizar la informacion ingresada como usuario
+        public string SolicitudUser { get; private set; }
+        public string SolicitudPass { get; private set; }
+
         private void btnRegistrarUser_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,7 +44,7 @@ namespace Interfaz
             var solicitudPass = InputPassCred.Text;
 
             //Necesito comparar creds con base de datos simulare por mientras
-            if (solicitudUser != "admin" && solicitudPass != "password")
+            if (solicitudUser != "admin" && solicitudPass != "admin")
             {
                 MessageBox.Show("Usuario invalido");
             }
@@ -48,8 +52,8 @@ namespace Interfaz
             {
                 // encontramos al usuario, en este caso admin e ingresamos a la pagina principal
                 this.Hide(); //como ya no usaremos esta pagina la escondemos
-                Form1 form1 = new Form1(); //creamos una variable que inicia la pagina
-                form1.ShowDialog(); // abrimos la pagina
+                Hub hub = new Hub(); //creamos una variable que inicia la pagina
+                hub.ShowDialog(); // abrimos la pagina
                 this.Close(); //la cerramos despues
             }
 
