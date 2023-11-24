@@ -15,6 +15,7 @@ namespace Interfaz
         //para prueba, se crean variables para capturar valores de login
         private string usuario;
         private string password;
+        
         public Hub(string usuario, string password)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace Interfaz
         private void MostrarCredencialesDeLogIn()
         {
             lblUser.Text = "Usuario: " + usuario;
-            lblPass.Text = "Contrasena: " + password;
+            lblNom.Text = "Nombre: N/A";
         }
         // Final de codigo para pruebas
 

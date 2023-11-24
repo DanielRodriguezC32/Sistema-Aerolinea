@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panelUsr = new System.Windows.Forms.Panel();
+            lblNom = new System.Windows.Forms.Label();
+            lblUser = new System.Windows.Forms.Label();
             PanelInicio = new System.Windows.Forms.Panel();
             panelNav = new System.Windows.Forms.TableLayoutPanel();
             btnInicio = new System.Windows.Forms.Button();
@@ -36,20 +38,36 @@
             btnPagos = new System.Windows.Forms.Button();
             btnConfig = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
-            lblUser = new System.Windows.Forms.Label();
-            lblPass = new System.Windows.Forms.Label();
             panelUsr.SuspendLayout();
             panelNav.SuspendLayout();
             SuspendLayout();
             // 
             // panelUsr
             // 
-            panelUsr.Controls.Add(lblPass);
+            panelUsr.Controls.Add(lblNom);
             panelUsr.Controls.Add(lblUser);
             panelUsr.Location = new System.Drawing.Point(12, 12);
             panelUsr.Name = "panelUsr";
             panelUsr.Size = new System.Drawing.Size(261, 75);
             panelUsr.TabIndex = 0;
+            // 
+            // lblNom
+            // 
+            lblNom.AutoSize = true;
+            lblNom.Location = new System.Drawing.Point(22, 43);
+            lblNom.Name = "lblNom";
+            lblNom.Size = new System.Drawing.Size(71, 20);
+            lblNom.TabIndex = 1;
+            lblNom.Text = "Nombre: ";
+            // 
+            // lblUser
+            // 
+            lblUser.AutoSize = true;
+            lblUser.Location = new System.Drawing.Point(22, 11);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new System.Drawing.Size(66, 20);
+            lblUser.TabIndex = 0;
+            lblUser.Text = "Usuario: ";
             // 
             // PanelInicio
             // 
@@ -134,24 +152,6 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
-            // lblUser
-            // 
-            lblUser.AutoSize = true;
-            lblUser.Location = new System.Drawing.Point(22, 11);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new System.Drawing.Size(50, 20);
-            lblUser.TabIndex = 0;
-            lblUser.Text = "label1";
-            // 
-            // lblPass
-            // 
-            lblPass.AutoSize = true;
-            lblPass.Location = new System.Drawing.Point(22, 43);
-            lblPass.Name = "lblPass";
-            lblPass.Size = new System.Drawing.Size(50, 20);
-            lblPass.TabIndex = 1;
-            lblPass.Text = "label1";
-            // 
             // Hub
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -161,7 +161,7 @@
             Controls.Add(PanelInicio);
             Controls.Add(panelUsr);
             Name = "Hub";
-            Text = "Nombre de Usuario";
+            Text = "Hub";
             panelUsr.ResumeLayout(false);
             panelUsr.PerformLayout();
             panelNav.ResumeLayout(false);
@@ -178,7 +178,7 @@
         private System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblUser;
     }
 }
