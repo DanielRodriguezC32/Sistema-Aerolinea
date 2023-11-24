@@ -28,7 +28,14 @@ namespace Interfaz
             cbLugarDestino.ValueMember = "LugarId";
             cbLugarDestino.DataSource = DataAccessLayer.Datos.ListaLugares();
 
-            vuelosDisplay.DataSource = DataAccessLayer.Datos.ListaLugares();
+            
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            var LugarOrigenId = cbLugarOrigen.SelectedValue;
+            var LugarDestinoId = cbLugarDestino.SelectedValue;
+            vuelosDisplay.DataSource = DataAccessLayer.Datos.VuelosFiltrados(Convert.ToInt32(LugarOrigenId), Convert.ToInt32(LugarDestinoId));            
         }
     }
 }
