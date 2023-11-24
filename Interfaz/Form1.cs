@@ -16,7 +16,7 @@ namespace Interfaz
         {
             InitializeComponent();
             InicializacionDeComponentesManual();
-            
+
 
 
 
@@ -38,6 +38,28 @@ namespace Interfaz
         }
 
         private void BuscarVuelos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mvForm2_Click(object sender, EventArgs e)
+        {
+            //esconder la ventana actual
+            this.Hide();
+            //Crear una sesion de la otra pagina
+            Form2 form2 = new Form2();
+            //Mostramos la pagina cargada
+            form2.ShowDialog();
+            //Cuando se cierre la otra pagina, que se vuelva a abrir esta
+            this.Show();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

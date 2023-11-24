@@ -1,4 +1,6 @@
 ﻿using BusinessLogicLayer;
+using System.Security.Principal;
+
 namespace Interfaz
 {
     partial class Form1
@@ -29,213 +31,242 @@ namespace Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.gvTabla = new System.Windows.Forms.DataGridView();
-            this.cbLugarOrigen = new System.Windows.Forms.ComboBox();
-            this.cbLugarDestino = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BuscarVuelos = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbAerolinea = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTabla)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            gvTabla = new System.Windows.Forms.DataGridView();
+            cbLugarOrigen = new System.Windows.Forms.ComboBox();
+            cbLugarDestino = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            BuscarVuelos = new System.Windows.Forms.Button();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            mvForm2 = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
+            button3 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
+            button5 = new System.Windows.Forms.Button();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            cbAerolinea = new System.Windows.Forms.ComboBox();
+            label3 = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)gvTabla).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // gvTabla
             // 
-            this.gvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTabla.Location = new System.Drawing.Point(14, 119);
-            this.gvTabla.Name = "gvTabla";
-            this.gvTabla.RowTemplate.Height = 25;
-            this.gvTabla.Size = new System.Drawing.Size(627, 364);
-            this.gvTabla.TabIndex = 0;
+            gvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvTabla.Location = new System.Drawing.Point(16, 138);
+            gvTabla.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            gvTabla.Name = "gvTabla";
+            gvTabla.RowHeadersWidth = 51;
+            gvTabla.RowTemplate.Height = 25;
+            gvTabla.Size = new System.Drawing.Size(717, 485);
+            gvTabla.TabIndex = 0;
             // 
             // cbLugarOrigen
             // 
-            this.cbLugarOrigen.FormattingEnabled = true;
-            this.cbLugarOrigen.Location = new System.Drawing.Point(92, 12);
-            this.cbLugarOrigen.Name = "cbLugarOrigen";
-            this.cbLugarOrigen.Size = new System.Drawing.Size(121, 23);
-            this.cbLugarOrigen.TabIndex = 1;
+            cbLugarOrigen.FormattingEnabled = true;
+            cbLugarOrigen.Location = new System.Drawing.Point(105, 16);
+            cbLugarOrigen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            cbLugarOrigen.Name = "cbLugarOrigen";
+            cbLugarOrigen.Size = new System.Drawing.Size(138, 28);
+            cbLugarOrigen.TabIndex = 1;
             // 
             // cbLugarDestino
             // 
-            this.cbLugarDestino.FormattingEnabled = true;
-            this.cbLugarDestino.Location = new System.Drawing.Point(92, 41);
-            this.cbLugarDestino.Name = "cbLugarDestino";
-            this.cbLugarDestino.Size = new System.Drawing.Size(121, 23);
-            this.cbLugarDestino.TabIndex = 2;
+            cbLugarDestino.FormattingEnabled = true;
+            cbLugarDestino.Location = new System.Drawing.Point(105, 55);
+            cbLugarDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            cbLugarDestino.Name = "cbLugarDestino";
+            cbLugarDestino.Size = new System.Drawing.Size(138, 28);
+            cbLugarDestino.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Origen";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(30, 20);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(54, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Origen";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Destino";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(30, 59);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(60, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Destino";
             // 
             // BuscarVuelos
             // 
-            this.BuscarVuelos.Location = new System.Drawing.Point(244, 35);
-            this.BuscarVuelos.Name = "BuscarVuelos";
-            this.BuscarVuelos.Size = new System.Drawing.Size(114, 32);
-            this.BuscarVuelos.TabIndex = 5;
-            this.BuscarVuelos.Text = "Buscar";
-            this.BuscarVuelos.UseVisualStyleBackColor = true;
-            this.BuscarVuelos.Click += new System.EventHandler(this.BuscarVuelos_Click);
+            BuscarVuelos.Location = new System.Drawing.Point(279, 47);
+            BuscarVuelos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            BuscarVuelos.Name = "BuscarVuelos";
+            BuscarVuelos.Size = new System.Drawing.Size(130, 43);
+            BuscarVuelos.TabIndex = 5;
+            BuscarVuelos.Text = "Buscar";
+            BuscarVuelos.UseVisualStyleBackColor = true;
+            BuscarVuelos.Click += BuscarVuelos_Click;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.button5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(39, 118);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 147);
-            this.tableLayoutPanel1.TabIndex = 6;
+            tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel1.Controls.Add(mvForm2, 0, 7);
+            tableLayoutPanel1.Controls.Add(button4, 0, 3);
+            tableLayoutPanel1.Controls.Add(button3, 0, 2);
+            tableLayoutPanel1.Controls.Add(button2, 0, 1);
+            tableLayoutPanel1.Controls.Add(button1, 0, 0);
+            tableLayoutPanel1.Controls.Add(button5, 0, 6);
+            tableLayoutPanel1.Location = new System.Drawing.Point(24, 162);
+            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 9;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.Size = new System.Drawing.Size(258, 334);
+            tableLayoutPanel1.TabIndex = 6;
             // 
-            // button1
+            // mvForm2
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(43, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Reservar vuelo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(22, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "No se que ponerle jeje";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(4, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(173, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Editar informacion de usuario";
-            this.button3.UseVisualStyleBackColor = true;
+            mvForm2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            mvForm2.Location = new System.Drawing.Point(82, 198);
+            mvForm2.Name = "mvForm2";
+            mvForm2.Size = new System.Drawing.Size(94, 27);
+            mvForm2.TabIndex = 9;
+            mvForm2.Text = "Ir";
+            mvForm2.UseVisualStyleBackColor = true;
+            mvForm2.Click += mvForm2_Click;
             // 
             // button4
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(17, 90);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(147, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Editar formas de pago";
-            this.button4.UseVisualStyleBackColor = true;
+            button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            button4.Location = new System.Drawing.Point(45, 121);
+            button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(168, 31);
+            button4.TabIndex = 3;
+            button4.Text = "Editar formas de pago";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            button3.Location = new System.Drawing.Point(30, 82);
+            button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(198, 31);
+            button3.TabIndex = 2;
+            button3.Text = "Editar informacion de usuario";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            button2.Location = new System.Drawing.Point(50, 43);
+            button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(158, 31);
+            button2.TabIndex = 1;
+            button2.Text = "No se que ponerle jeje";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            button1.Location = new System.Drawing.Point(74, 4);
+            button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(110, 31);
+            button1.TabIndex = 0;
+            button1.Text = "RERERE";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(43, 119);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(96, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Servicios extras";
-            this.button5.UseVisualStyleBackColor = true;
+            button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            button5.Location = new System.Drawing.Point(74, 160);
+            button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(110, 31);
+            button5.TabIndex = 4;
+            button5.Text = "Servicios extras";
+            button5.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(99, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Location = new System.Drawing.Point(113, 68);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(58, 67);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // cbAerolinea
             // 
-            this.cbAerolinea.FormattingEnabled = true;
-            this.cbAerolinea.Location = new System.Drawing.Point(92, 70);
-            this.cbAerolinea.Name = "cbAerolinea";
-            this.cbAerolinea.Size = new System.Drawing.Size(121, 23);
-            this.cbAerolinea.TabIndex = 6;
+            cbAerolinea.FormattingEnabled = true;
+            cbAerolinea.Location = new System.Drawing.Point(105, 93);
+            cbAerolinea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            cbAerolinea.Name = "cbAerolinea";
+            cbAerolinea.Size = new System.Drawing.Size(138, 28);
+            cbAerolinea.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Aerolinea";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(30, 97);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(73, 20);
+            label3.TabIndex = 7;
+            label3.Text = "Aerolinea";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbAerolinea);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.gvTabla);
-            this.panel1.Controls.Add(this.cbLugarOrigen);
-            this.panel1.Controls.Add(this.cbLugarDestino);
-            this.panel1.Controls.Add(this.BuscarVuelos);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(252, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 501);
-            this.panel1.TabIndex = 8;
+            panel1.Controls.Add(cbAerolinea);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(gvTabla);
+            panel1.Controls.Add(cbLugarOrigen);
+            panel1.Controls.Add(cbLugarDestino);
+            panel1.Controls.Add(BuscarVuelos);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new System.Drawing.Point(288, 3);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(750, 668);
+            panel1.TabIndex = 8;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 747);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.gvTabla)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1334, 881);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(tableLayoutPanel1);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)gvTabla).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -256,6 +287,7 @@ namespace Interfaz
         private System.Windows.Forms.ComboBox cbAerolinea;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button mvForm2;
     }
 }
 
