@@ -36,5 +36,10 @@ namespace Interfaz
 
             gvTabla.DataSource = DataAccessLayer.Datos.ListaLugares();
         }
+
+        private void BuscarVuelos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
