@@ -12,9 +12,18 @@ namespace Interfaz
 {
     public partial class Hub : Form
     {
-        public Hub()
+        //para prueba, se crean variables para capturar valores de login
+        private string usuario;
+        private string password;
+        public Hub(string usuario, string password)
         {
             InitializeComponent();
+
+            //para prueba, se asignan los valores recibidos a las variables del Hub
+            this.usuario = usuario;
+            this.password = password;
+
+            MostrarCredencialesDeLogIn();
         }
 
         // Para pruebas
@@ -22,22 +31,8 @@ namespace Interfaz
         // Se planea utilizar las credenciales de usuario existentes en la base de datos
         private void MostrarCredencialesDeLogIn()
         {
-            LogIn loginForm = new LogIn(); // Crear una instancia del formulario LogIn
-
-            // Acceder a las propiedades públicas para obtener las credenciales
-            string usuario = loginForm.SolicitudUser;
-            string password = loginForm.SolicitudPass;
-
-            // Mostrar la información en el panelUsr
-            Label labelUsuario = new Label();
-            labelUsuario.Text = "Usuario: " + usuario;
-            labelUsuario.Location = new Point(10, 10); // Establece la posición en el panel
-            panelUsr.Controls.Add(labelUsuario);
-
-            Label labelPassword = new Label();
-            labelPassword.Text = "Contraseña: " + password;
-            labelPassword.Location = new Point(10, 30); // Establece la posición en el panel
-            panelUsr.Controls.Add(labelPassword);
+            lblUser.Text = "Usuario: " + usuario;
+            lblPass.Text = "Contrasena: " + password;
         }
         // Final de codigo para pruebas
 

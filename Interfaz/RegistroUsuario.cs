@@ -28,9 +28,10 @@ namespace Interfaz
 
         private void Regresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             LogIn logIn = new LogIn();
             logIn.ShowDialog();
+            this.Close();
         }
     }
 }

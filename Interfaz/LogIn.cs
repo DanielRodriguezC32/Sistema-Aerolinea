@@ -52,7 +52,7 @@ namespace Interfaz
             {
                 // encontramos al usuario, en este caso admin e ingresamos a la pagina principal
                 this.Hide(); //como ya no usaremos esta pagina la escondemos
-                Hub hub = new Hub(); //creamos una variable que inicia la pagina
+                Hub hub = new Hub(solicitudUser, solicitudPass); //creamos una variable que inicia la pagina
                 hub.ShowDialog(); // abrimos la pagina
                 this.Close(); //la cerramos despues
             }
