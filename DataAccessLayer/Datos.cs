@@ -20,6 +20,26 @@ namespace DataAccessLayer
             }
         }
 
+        public static List<Modelo.TablaVuelos> VuelosFiltrados(int LugarOrigenId, int LugarDestinoId)
+        {
+            var salida = new List<Modelo.TablaVuelos>();
+            using (var ctx = new AeropuertoEntitiesRodrigo())
+            {
+                var vuelos = ctx.Vuelo.Where(z => z.LugarOrigenId == LugarOrigenId && z.LugarDestinoId == LugarDestinoId).OrderBy(z => z.FechaSalida).ToList();
+                vuelos.ForEach(z =>
+                {
+                    salida.Add(new Modelo.TablaVuelos()
+                    {
+                        Desde = z.Lugar1.Descripcion,
+                        Hacia = z.Lugar.Descripcion,
+                        FechaDeSalida = z.FechaSalida,
+                        AsientosDisponibles = z.NumeroPasajeros - z.Reservacion.Count,
+                        Costo = z.Precio
+                    });
+                });            
+            }
+            return salida;
+        }
         //public static List<Modelo.Usuario> ListaUsuarios()
         //{
         //    var listaUsuario = new List<Modelo.Usuario>();

@@ -38,105 +38,113 @@ namespace Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            vuelosDisplay = new DataGridView();
-            cbLugarOrigen = new ComboBox();
-            cbLugarDestino = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            btnFiltrar = new Button();
-            cbAerolinea = new ComboBox();
-            label3 = new Label();
-            ((ISupportInitialize)vuelosDisplay).BeginInit();
-            SuspendLayout();
+            this.vuelosDisplay = new System.Windows.Forms.DataGridView();
+            this.cbLugarOrigen = new System.Windows.Forms.ComboBox();
+            this.cbLugarDestino = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cbAerolinea = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.vuelosDisplay)).BeginInit();
+            this.SuspendLayout();
             // 
             // vuelosDisplay
             // 
-            vuelosDisplay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            vuelosDisplay.Location = new Point(26, 155);
-            vuelosDisplay.Name = "vuelosDisplay";
-            vuelosDisplay.RowHeadersWidth = 51;
-            vuelosDisplay.RowTemplate.Height = 29;
-            vuelosDisplay.Size = new Size(751, 380);
-            vuelosDisplay.TabIndex = 0;
+            this.vuelosDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vuelosDisplay.Location = new System.Drawing.Point(23, 116);
+            this.vuelosDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vuelosDisplay.Name = "vuelosDisplay";
+            this.vuelosDisplay.RowHeadersWidth = 51;
+            this.vuelosDisplay.RowTemplate.Height = 29;
+            this.vuelosDisplay.Size = new System.Drawing.Size(657, 285);
+            this.vuelosDisplay.TabIndex = 0;
             // 
             // cbLugarOrigen
             // 
-            cbLugarOrigen.FormattingEnabled = true;
-            cbLugarOrigen.Location = new Point(117, 66);
-            cbLugarOrigen.Name = "cbLugarOrigen";
-            cbLugarOrigen.Size = new Size(217, 28);
-            cbLugarOrigen.TabIndex = 1;
+            this.cbLugarOrigen.FormattingEnabled = true;
+            this.cbLugarOrigen.Location = new System.Drawing.Point(102, 50);
+            this.cbLugarOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbLugarOrigen.Name = "cbLugarOrigen";
+            this.cbLugarOrigen.Size = new System.Drawing.Size(190, 23);
+            this.cbLugarOrigen.TabIndex = 1;
             // 
             // cbLugarDestino
             // 
-            cbLugarDestino.FormattingEnabled = true;
-            cbLugarDestino.Location = new Point(117, 111);
-            cbLugarDestino.Name = "cbLugarDestino";
-            cbLugarDestino.Size = new Size(217, 28);
-            cbLugarDestino.TabIndex = 2;
+            this.cbLugarDestino.FormattingEnabled = true;
+            this.cbLugarDestino.Location = new System.Drawing.Point(102, 83);
+            this.cbLugarDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbLugarDestino.Name = "cbLugarDestino";
+            this.cbLugarDestino.Size = new System.Drawing.Size(190, 23);
+            this.cbLugarDestino.TabIndex = 2;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(26, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Origen:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Origen:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(26, 111);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Destino:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Destino:";
             // 
             // btnFiltrar
             // 
-            btnFiltrar.Location = new Point(381, 111);
-            btnFiltrar.Name = "btnFiltrar";
-            btnFiltrar.Size = new Size(94, 29);
-            btnFiltrar.TabIndex = 5;
-            btnFiltrar.Text = "Filtrar";
-            btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(333, 83);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(82, 22);
+            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // cbAerolinea
             // 
-            cbAerolinea.FormattingEnabled = true;
-            cbAerolinea.Location = new Point(117, 12);
-            cbAerolinea.Name = "cbAerolinea";
-            cbAerolinea.Size = new Size(217, 28);
-            cbAerolinea.TabIndex = 6;
+            this.cbAerolinea.FormattingEnabled = true;
+            this.cbAerolinea.Location = new System.Drawing.Point(102, 9);
+            this.cbAerolinea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAerolinea.Name = "cbAerolinea";
+            this.cbAerolinea.Size = new System.Drawing.Size(190, 23);
+            this.cbAerolinea.TabIndex = 6;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 20);
-            label3.TabIndex = 7;
-            label3.Text = "Aerolinea:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Aerolinea:";
             // 
             // VuelosInf
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 557);
-            Controls.Add(label3);
-            Controls.Add(cbAerolinea);
-            Controls.Add(btnFiltrar);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(cbLugarDestino);
-            Controls.Add(cbLugarOrigen);
-            Controls.Add(vuelosDisplay);
-            Name = "VuelosInf";
-            Text = "VuelosInf";
-            ((ISupportInitialize)vuelosDisplay).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(700, 418);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbAerolinea);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbLugarDestino);
+            this.Controls.Add(this.cbLugarOrigen);
+            this.Controls.Add(this.vuelosDisplay);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "VuelosInf";
+            this.Text = "VuelosInf";
+            ((System.ComponentModel.ISupportInitialize)(this.vuelosDisplay)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
