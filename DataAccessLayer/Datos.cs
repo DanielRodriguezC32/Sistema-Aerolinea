@@ -20,6 +20,63 @@ namespace DataAccessLayer
             }
         }
 
+        public static Modelo.Usuario ValidarUsuario(string solicitudUser, string solicitudPass)
+        {
+            var UsuarioSalida = new Modelo.Usuario();
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var user = ctx.Usuario.FirstOrDefault(z => z.Username == solicitudUser && z.Contrasena == solicitudPass);
+                    if(user != null)
+                    {
+                        UsuarioSalida.ApellidoMaterno = user.ApellidoMaterno;
+                        UsuarioSalida.ApellidoPaterno = user.ApellidoPaterno;
+                        UsuarioSalida.Contrasena = user.Contrasena;
+                        UsuarioSalida.Nombres = user.Nombres;
+                        UsuarioSalida.Username = user.Username;
+                        UsuarioSalida.UsuarioId = user.UsuarioId;
+                    }
+                }
+                return UsuarioSalida;
+            }
+            catch (Exception)
+            {
+                return null;
+            }            
+        }
+
+        public static bool RegistroUsuario(Modelo.Usuario nuevoUsuario)
+        {
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var usuarios = ctx.Usuario.ToList();
+                    if (usuarios.Any(z => z.Username == nuevoUsuario.Username)){
+                        return false;
+                    }
+                    else
+                    {
+                        ctx.Usuario.Add(new Usuario()
+                        {
+                            Username = nuevoUsuario.Username,
+                            Contrasena = nuevoUsuario.Contrasena,
+                            ApellidoPaterno = nuevoUsuario.ApellidoPaterno,
+                            ApellidoMaterno = nuevoUsuario.ApellidoMaterno,
+                            Nombres = nuevoUsuario.Nombres
+                        });
+                        ctx.SaveChanges();
+                    }
+
+                }
+            }catch(Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static List<Modelo.TablaVuelos> VuelosFiltrados(int LugarOrigenId, int LugarDestinoId)
         {
             var salida = new List<Modelo.TablaVuelos>();
@@ -40,21 +97,54 @@ namespace DataAccessLayer
             }
             return salida;
         }
-        //public static List<Modelo.Usuario> ListaUsuarios()
-        //{
-        //    var listaUsuario = new List<Modelo.Usuario>();
-        //    using (var ctx = new AeropuertoEntitiesRodrigo())
-        //    {
-        //        return ctx.Usuario.Select(usuario => new Modelo.Usuario()
-        //        {
-        //            UsuarioId = usuario.UsuarioId,
-        //            Nombres = usuario.Nombres,
-        //            ApellidoPaterno = usuario.ApellidoPaterno,
-        //            ApellidoMaterno = usuario.ApellidoMaterno,
-        //            Username = usuario.Username,
-        //            Contrasena = usuario.Contrasena
-        //        }).ToList();
-        //    }
-        //}
+        
+        public static List<Modelo.Reservacion> ReservacionesPorUsuario(int UsuarioId)
+        {
+            var reservaciones = new List<Modelo.Reservacion>();
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+
+                    var datos = ctx.Pago.Where(z => z.UsuarioId == UsuarioId)
+                        .SelectMany(z => z.Transaccion)
+                            .SelectMany(z => z.Reservacion)
+                                .Where(z => z.Vuelo.FechaSalida > DateTime.Now).ToList();
+                    foreach (var reservacion in datos)
+                    {
+                        var Registro = new Modelo.Reservacion();
+                        //Llenar Datos con lo que se necesite, se modifica el POCO Reservacion para toda la info extra
+                        //var vuelo = reservacion.Vuelo;
+                        //vuelo.LugarOrigenId;
+                        //vuelo.LugarDestinoId;
+                        //vuelo.FechaSalida;                        
+                        reservaciones.Add(Registro);
+                    }
+                    
+                }
+                
+            }
+            catch (Exception)
+            {                
+            }
+            return reservaciones;
+        }
+
+        public static bool RegistroPago(Modelo.Pago nuevoPago)
+        {
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    
+
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

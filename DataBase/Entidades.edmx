@@ -20,8 +20,8 @@
           <Property Name="PagoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UsuarioId" Type="int" Nullable="false" />
           <Property Name="TipoPagoId" Type="int" Nullable="false" />
-          <Property Name="NumeroTarjeta" Type="varchar" MaxLength="1" />
-          <Property Name="CorreoPaypal" Type="varchar" MaxLength="1" />
+          <Property Name="NumeroTarjeta" Type="varchar" MaxLength="20" />
+          <Property Name="CorreoPaypal" Type="varchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="Reservacion">
           <Key>
@@ -36,7 +36,7 @@
             <PropertyRef Name="TipoPagoId" />
           </Key>
           <Property Name="TipoPagoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="1" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="Transaccion">
           <Key>
@@ -52,9 +52,11 @@
             <PropertyRef Name="UsuarioId" />
           </Key>
           <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombres" Type="varchar" MaxLength="1" />
-          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="1" />
-          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="1" />
+          <Property Name="Nombres" Type="varchar" MaxLength="80" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="40" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="40" />
+          <Property Name="Username" Type="varchar" MaxLength="40" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="Vuelo">
           <Key>
@@ -211,8 +213,8 @@
           <Property Name="PagoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UsuarioId" Type="Int32" Nullable="false" />
           <Property Name="TipoPagoId" Type="Int32" Nullable="false" />
-          <Property Name="NumeroTarjeta" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="CorreoPaypal" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CorreoPaypal" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TipoPago" Relationship="Self.Pago_TipoPagoId_FK" FromRole="Pago" ToRole="TipoPago" />
           <NavigationProperty Name="Usuario" Relationship="Self.Pago_UsuarioId_FK" FromRole="Pago" ToRole="Usuario" />
           <NavigationProperty Name="Transaccion" Relationship="Self.Transaccion_PagoId_FK" FromRole="Pago" ToRole="Transaccion" />
@@ -232,7 +234,7 @@
             <PropertyRef Name="TipoPagoId" />
           </Key>
           <Property Name="TipoPagoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descripcion" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Pago" Relationship="Self.Pago_TipoPagoId_FK" FromRole="TipoPago" ToRole="Pago" />
         </EntityType>
         <EntityType Name="Transaccion">
@@ -251,10 +253,12 @@
             <PropertyRef Name="UsuarioId" />
           </Key>
           <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombres" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="ApellidoPaterno" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="ApellidoMaterno" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Pago" Relationship="Self.Pago_UsuarioId_FK" FromRole="Usuario" ToRole="Pago" />
+          <Property Name="Username" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Vuelo">
           <Key>
@@ -449,6 +453,8 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="AeropuertoModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
                 <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />

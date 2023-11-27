@@ -7,24 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Interfaz
 {
     public partial class Hub : Form
     {
         //para prueba, se crean variables para capturar valores de login
-        private string usuario;
-        private string password;
+        private Usuario UsuarioActual;
         
-        public Hub(string usuario, string password)
+        public Hub(Usuario UsuarioActualconstructor)
         {
             InitializeComponent();
 
             //para prueba, se asignan los valores recibidos a las variables del Hub
-            this.usuario = usuario;
-            this.password = password;
-
+            this.UsuarioActual = UsuarioActualconstructor;
             MostrarCredencialesDeLogIn();
+            btnInicio_Click(new object(), new EventArgs());
         }
 
         // Para pruebas
@@ -32,8 +31,8 @@ namespace Interfaz
         // Se planea utilizar las credenciales de usuario existentes en la base de datos
         private void MostrarCredencialesDeLogIn()
         {
-            lblUser.Text = "Usuario: " + usuario;
-            lblNom.Text = "Nombre: N/A";
+            lblUser.Text = "Usuario: " + UsuarioActual.Username;
+            lblNom.Text = "Nombre:  " + UsuarioActual.Nombres+ " "+ UsuarioActual.ApellidoPaterno;
         }
         // Final de codigo para pruebas
 

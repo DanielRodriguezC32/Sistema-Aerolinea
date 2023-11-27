@@ -28,97 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnRegistrarUser = new System.Windows.Forms.Button();
-            lblTitulo = new System.Windows.Forms.Label();
-            InputUserCred = new System.Windows.Forms.TextBox();
-            InputPassCred = new System.Windows.Forms.TextBox();
-            btnSendCred = new System.Windows.Forms.Button();
-            lblInstruccion1 = new System.Windows.Forms.Label();
-            lblInstruccion2 = new System.Windows.Forms.Label();
-            SuspendLayout();
+            this.btnRegistrarUser = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.InputUserCred = new System.Windows.Forms.TextBox();
+            this.InputPassCred = new System.Windows.Forms.TextBox();
+            this.btnSendCred = new System.Windows.Forms.Button();
+            this.lblInstruccion1 = new System.Windows.Forms.Label();
+            this.lblInstruccion2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnRegistrarUser
             // 
-            btnRegistrarUser.Location = new System.Drawing.Point(237, 389);
-            btnRegistrarUser.Name = "btnRegistrarUser";
-            btnRegistrarUser.Size = new System.Drawing.Size(94, 29);
-            btnRegistrarUser.TabIndex = 0;
-            btnRegistrarUser.Text = "Registrarse";
-            btnRegistrarUser.UseVisualStyleBackColor = true;
-            btnRegistrarUser.Click += btnRegistrarUser_Click;
+            this.btnRegistrarUser.Location = new System.Drawing.Point(207, 292);
+            this.btnRegistrarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrarUser.Name = "btnRegistrarUser";
+            this.btnRegistrarUser.Size = new System.Drawing.Size(82, 22);
+            this.btnRegistrarUser.TabIndex = 0;
+            this.btnRegistrarUser.Text = "Registrarse";
+            this.btnRegistrarUser.UseVisualStyleBackColor = true;
+            this.btnRegistrarUser.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblTitulo.Location = new System.Drawing.Point(114, 40);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new System.Drawing.Size(133, 37);
-            lblTitulo.TabIndex = 1;
-            lblTitulo.Text = "AeroBook";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(100, 30);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(110, 30);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "AeroBook";
             // 
             // InputUserCred
             // 
-            InputUserCred.Location = new System.Drawing.Point(51, 123);
-            InputUserCred.Name = "InputUserCred";
-            InputUserCred.PlaceholderText = "Usuario";
-            InputUserCred.Size = new System.Drawing.Size(244, 27);
-            InputUserCred.TabIndex = 2;
+            this.InputUserCred.Location = new System.Drawing.Point(45, 92);
+            this.InputUserCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InputUserCred.Name = "InputUserCred";
+            this.InputUserCred.PlaceholderText = "Usuario";
+            this.InputUserCred.Size = new System.Drawing.Size(214, 23);
+            this.InputUserCred.TabIndex = 2;
             // 
             // InputPassCred
             // 
-            InputPassCred.Location = new System.Drawing.Point(51, 165);
-            InputPassCred.Name = "InputPassCred";
-            InputPassCred.PlaceholderText = "Contrasena";
-            InputPassCred.Size = new System.Drawing.Size(244, 27);
-            InputPassCred.TabIndex = 3;
+            this.InputPassCred.Location = new System.Drawing.Point(45, 124);
+            this.InputPassCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InputPassCred.Name = "InputPassCred";
+            this.InputPassCred.PlaceholderText = "Contrasena";
+            this.InputPassCred.Size = new System.Drawing.Size(214, 23);
+            this.InputPassCred.TabIndex = 3;
             // 
             // btnSendCred
             // 
-            btnSendCred.Location = new System.Drawing.Point(128, 198);
-            btnSendCred.Name = "btnSendCred";
-            btnSendCred.Size = new System.Drawing.Size(94, 29);
-            btnSendCred.TabIndex = 4;
-            btnSendCred.Text = "Ingresar";
-            btnSendCred.UseVisualStyleBackColor = true;
-            btnSendCred.Click += btnSendCred_Click;
+            this.btnSendCred.Location = new System.Drawing.Point(112, 148);
+            this.btnSendCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendCred.Name = "btnSendCred";
+            this.btnSendCred.Size = new System.Drawing.Size(82, 22);
+            this.btnSendCred.TabIndex = 4;
+            this.btnSendCred.Text = "Ingresar";
+            this.btnSendCred.UseVisualStyleBackColor = true;
+            this.btnSendCred.Click += new System.EventHandler(this.btnSendCred_Click);
             // 
             // lblInstruccion1
             // 
-            lblInstruccion1.AutoSize = true;
-            lblInstruccion1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblInstruccion1.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            lblInstruccion1.Location = new System.Drawing.Point(51, 101);
-            lblInstruccion1.Name = "lblInstruccion1";
-            lblInstruccion1.Size = new System.Drawing.Size(209, 19);
-            lblInstruccion1.TabIndex = 5;
-            lblInstruccion1.Text = "Ingrese sus datos para continuar";
+            this.lblInstruccion1.AutoSize = true;
+            this.lblInstruccion1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInstruccion1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblInstruccion1.Location = new System.Drawing.Point(45, 76);
+            this.lblInstruccion1.Name = "lblInstruccion1";
+            this.lblInstruccion1.Size = new System.Drawing.Size(176, 13);
+            this.lblInstruccion1.TabIndex = 5;
+            this.lblInstruccion1.Text = "Ingrese sus datos para continuar";
             // 
             // lblInstruccion2
             // 
-            lblInstruccion2.AutoSize = true;
-            lblInstruccion2.Location = new System.Drawing.Point(60, 421);
-            lblInstruccion2.Name = "lblInstruccion2";
-            lblInstruccion2.Size = new System.Drawing.Size(271, 20);
-            lblInstruccion2.TabIndex = 6;
-            lblInstruccion2.Text = "Aun no tienes cuenta? Registrate aqui!...";
+            this.lblInstruccion2.AutoSize = true;
+            this.lblInstruccion2.Location = new System.Drawing.Point(52, 316);
+            this.lblInstruccion2.Name = "lblInstruccion2";
+            this.lblInstruccion2.Size = new System.Drawing.Size(217, 15);
+            this.lblInstruccion2.TabIndex = 6;
+            this.lblInstruccion2.Text = "Aun no tienes cuenta? Registrate aqui!...";
             // 
             // LogIn
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(362, 450);
-            Controls.Add(lblInstruccion2);
-            Controls.Add(lblInstruccion1);
-            Controls.Add(btnSendCred);
-            Controls.Add(InputPassCred);
-            Controls.Add(InputUserCred);
-            Controls.Add(lblTitulo);
-            Controls.Add(btnRegistrarUser);
-            Name = "LogIn";
-            Text = "Acceso de Usuario";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(317, 338);
+            this.Controls.Add(this.lblInstruccion2);
+            this.Controls.Add(this.lblInstruccion1);
+            this.Controls.Add(this.btnSendCred);
+            this.Controls.Add(this.InputPassCred);
+            this.Controls.Add(this.InputUserCred);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.btnRegistrarUser);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "LogIn";
+            this.Text = "Acceso de Usuario";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

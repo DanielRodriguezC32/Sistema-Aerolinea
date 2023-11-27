@@ -19,48 +19,41 @@ namespace Interfaz
 
         private void btnRegUsrNew_Click(object sender, EventArgs e)
         {
-            //Aqui tomaremos los datos ingresados del usuario para meterlos a la base de datos.
-            var NewUser = InputNewUsrCred.Text;
-            var NewPass = InputNewPassCred.Text;
-            var NewNombre = InputNewNombreCred.Text;
-            var NewApellidoP = InputNewApellidoPCred.Text;
-            var NewApellidoM = InputNewApellidoMCred.Text;
+            if (NewPassValid.Text == InputNewPassCred.Text)
+            {
+                //Aqui tomaremos los datos ingresados del usuario para meterlos a la base de datos.
+                var NewUser = InputNewUsrCred.Text;
+                var NewPass = InputNewPassCred.Text;
+                var NewNombre = InputNewNombreCred.Text;
+                var NewApellidoP = InputNewApellidoPCred.Text;
+                var NewApellidoM = InputNewApellidoMCred.Text;
 
+                var nuevoUsuario = new Modelo.Usuario
+                {
+                    Username = NewUser,
+                    Contrasena = NewPass,
+                    Nombres = NewNombre,
+                    ApellidoPaterno = NewApellidoP,
+                    ApellidoMaterno = NewApellidoM
+                };
 
-            //Obtenemos la lista de usuarios
-            //List<Modelo.Usuario> usuarios = DataAccessLayer.Datos.ListaUsuarios();
+                bool UsuarioCreado = BusinessLogicLayer.BLL.RegistroUsuario(nuevoUsuario);                
 
-            //// Verificamos si la persona ya se registro
-            //bool usuarioExistente = usuarios.Any(u => u.Nombres == NewNombre && u.ApellidoPaterno == NewApellidoP && u.ApellidoMaterno == NewApellidoM);
-
-            //// Verificar si ya existe un usuario con el mismo nombre de usuario
-            //bool nombreUsuarioExistente = usuarios.Any(u => u.Username == NewUser);
-
-            //if (usuarioExistente)
-            //{
-            //    MessageBox.Show("Ya tienes una cuenta registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else if (nombreUsuarioExistente)
-            //{
-            //    MessageBox.Show("El nombre de usuario no esta disponible", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    // Crear un nuevo objeto de usuario
-            //    var nuevoUsuario = new Modelo.Usuario
-            //    {
-            //        Username = NewUser,
-            //        Contrasena = NewPass,
-            //        Nombres = NewNombre,
-            //        ApellidoPaterno = NewApellidoP,
-            //        ApellidoMaterno = NewApellidoM
-            //    };
-
-            //    MessageBox.Show("Quedaste registrado!", " ", MessageBoxButtons.OK);
-            //    this.Close();
-            //}
-            MessageBox.Show("Quedaste registrado!", " ", MessageBoxButtons.OK);
-            this.Close();
+                if (UsuarioCreado)
+                {
+                    MessageBox.Show("Quedaste registrado!", " ", MessageBoxButtons.OK);
+                }
+                else 
+                {
+                    MessageBox.Show("Hubo un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }                
+                
+                this.Close();
+            }
+            else
+            {
+                NewPassValid.Text = "Contraseñas diferntes";
+            }
 
 
         }

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Modelo\Modelo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

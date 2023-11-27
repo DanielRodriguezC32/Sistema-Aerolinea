@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 
 namespace Interfaz
 {
@@ -26,10 +27,6 @@ namespace Interfaz
 
         }
 
-        //para pruebas, estas dos variables son publicas para utilizar la informacion ingresada como usuario
-        public string SolicitudUser { get; private set; }
-        public string SolicitudPass { get; private set; }
-
         //Abre la ventana de registro de nuevo usuario
         private void btnRegistrarUser_Click(object sender, EventArgs e)
         {
@@ -42,35 +39,21 @@ namespace Interfaz
         //Verifica Credenciales
         private void btnSendCred_Click(object sender, EventArgs e)
         {
-            //variables para validacion de usuario
+            
             var solicitudUser = InputUserCred.Text;
             var solicitudPass = InputPassCred.Text;
 
-            //Obtener los datos de usuario
-            //List<Modelo.Usuario> usuarios = DataAccessLayer.Datos.ListaUsuarios();
-
-            //// Verificar si el usuario y la contraseña coinciden con algún usuario de la lista
-            //Modelo.Usuario usuarioEncontrado = usuarios.FirstOrDefault(u => u.Username == solicitudUser && u.Contrasena == solicitudPass);
-
-            ////Necesito comparar creds con base de datos simulare por mientras
-            //if (usuarioEncontrado != null)
-            //{
-            //    // encontramos al usuario e ingresamos a la pagina principal
-            //    this.Hide(); //como ya no usaremos esta pagina la escondemos
-            //    Hub hub = new Hub(solicitudUser, solicitudPass); //creamos una variable que inicia la pagina
-            //    hub.ShowDialog(); // abrimos la pagina
-            //    this.Close(); //la cerramos despues
-            //}
-            if (solicitudUser == "admin" && solicitudPass == "admin")
+            var Username = BusinessLogicLayer.BLL.ValidarUsuario(solicitudUser, solicitudPass);
+            if (Username.UsuarioId > 0)
             {
                 this.Hide();
-                Hub hub = new Hub(solicitudUser, solicitudPass);
+                Hub hub = new Hub(Username);
                 hub.ShowDialog();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Usuario invalido");
+                MessageBox.Show("Username y/o contrseña invalido");
             }
 
         }

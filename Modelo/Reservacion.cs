@@ -12,5 +12,9 @@ namespace Modelo
         public int VueloId { get; set; }
         public int TransaccionId { get; set; }
 
+        #region datos informativos
+
+        #endregion
+
     }
 }
