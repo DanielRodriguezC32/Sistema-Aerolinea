@@ -21,5 +21,27 @@ namespace BusinessLogicLayer
         {
             return DataAccessLayer.Datos.ValidarUsuario(solicitudUser, solicitudPass);
         }
+
+        public static List<TipoPago> ListaTipoPago()
+        {
+            return DataAccessLayer.Datos.ListaTipoPago();
+        }
+        public static bool RegistroPago(Modelo.Pago pago)
+        {
+            return DataAccessLayer.Datos.RegistroPago(pago);
+        }
+        public static List<Reservacion> ReservacionesPorUsuario(int UsuarioId)
+        {
+            return DataAccessLayer.Datos.ReservacionesPorUsuario(UsuarioId);
+        }
+        public static List<TablaVuelos> VuelosFiltrados(int LugarOrigenId, int LugarDestinoId)
+        {
+            return DataAccessLayer.Datos.VuelosFiltrados(LugarOrigenId, LugarDestinoId);
+        }
+        public static List<Modelo.Pago> ListaPagoDeUsuario(int UsuarioId)
+        {
+            return DataAccessLayer.Datos.ListaPagoDeUsuario(UsuarioId);
+        }
+        
     }
 }

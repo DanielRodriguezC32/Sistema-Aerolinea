@@ -121,8 +121,7 @@ namespace DataAccessLayer
                         reservaciones.Add(Registro);
                     }
                     
-                }
-                
+                }                
             }
             catch (Exception)
             {                
@@ -136,8 +135,15 @@ namespace DataAccessLayer
             {
                 using (var ctx = new AeropuertoEntitiesRodrigo())
                 {
-                    
+                    var pag = new Pago();
 
+                    pag.PagoId = nuevoPago.PagoId;
+                    pag.UsuarioId = nuevoPago.UsuarioId;
+                    pag.TipoPagoId = nuevoPago.TipoPagoId;
+                    pag.NumeroTarjeta = nuevoPago.NumeroTarjeta;
+                    pag.CorreoPaypal = nuevoPago.CorreoPaypal;
+                    ctx.Pago.Add(pag);
+                    ctx.SaveChanges();
                 }
             }
             catch (Exception)
@@ -146,5 +152,91 @@ namespace DataAccessLayer
             }
             return true;
         }
+
+        public static List<Modelo.TipoPago> ListaTipoPago()
+        {
+            List<Modelo.TipoPago> salida = new List<Modelo.TipoPago>();
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    salida = ctx.TipoPago.Select(z => new Modelo.TipoPago() { 
+                     Descripcion = z.Descripcion,
+                     TipoPagoId = z.TipoPagoId
+                    }).ToList();
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return salida;
+        }
+
+        public static List<Modelo.Pago> ListaPagoDeUsuario(int UsuarioId)
+        {
+            List<Modelo.Pago> salida = new List<Modelo.Pago>();
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    salida = ctx.Pago.Where(z => z.UsuarioId == UsuarioId).Select(z => new Modelo.Pago() { 
+                    PagoId = z.PagoId,
+                    CorreoPaypal = z.CorreoPaypal,
+                    NumeroTarjeta = z.NumeroTarjeta,
+                    TipoPagoId = z.TipoPagoId,
+                    UsuarioId = z.UsuarioId
+                    }).ToList();
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return salida;
+        }
+
+        public static bool CrearReservacion(int VueloId, int TransaccionId)
+        {
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var NewReservacion = new Reservacion();
+                    NewReservacion.VueloId = VueloId;
+                    NewReservacion.TransaccionId = TransaccionId;
+                    ctx.Reservacion.Add(NewReservacion);
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static int CrearTransaccion(int PagoId, int Cantidad)
+        {
+            int NuevoIdTransaccion = 0;
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var NewTransaccion = new Transaccion();
+                    NewTransaccion.PagoId = PagoId;
+                    NewTransaccion.Cantidad = Cantidad;
+                    NewTransaccion.Fecha = DateTime.Now;
+                    ctx.Transaccion.Add(NewTransaccion);
+                    ctx.SaveChanges();
+                    NuevoIdTransaccion = ctx.Transaccion.Last().TransaccionId;
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            return NuevoIdTransaccion;
+        }
+
+
     }
 }
