@@ -46,11 +46,21 @@ namespace Interfaz
                     form.Hide();
                 }
             }
-
-            UsrInicio usrInicio = new UsrInicio() { TopLevel = false, TopMost = true };
+            UsuarioActual = BusinessLogicLayer.BLL.ObtenerUsuarioPorUserName(UsuarioActual.Username);
+            UsrInicio usrInicio = new UsrInicio(UsuarioActual) { TopLevel = false, TopMost = true };
             usrInicio.FormBorderStyle = FormBorderStyle.None;
             PanelInicio.Controls.Add(usrInicio);
-            usrInicio.Show();
+            string notas;
+            if (UsuarioActual.CantidadDePagosConfigurados == 0)
+            {
+                notas = "Metodos de pagos no configurados, por favor configure los metodos de pago antes de continuar...";
+            }
+            else
+            {
+                notas = "Sin notificaciones por el momento...";
+            }
+            usrInicio.ActualizarNotificaciones(notas);
+            usrInicio.Show();            
         }
 
         private void btnVuelos_Click(object sender, EventArgs e)
@@ -63,7 +73,7 @@ namespace Interfaz
                     form.Hide();
                 }
             }
-            VuelosInf vuelosInf = new VuelosInf() { TopLevel = false, TopMost = true };
+            VuelosInf vuelosInf = new VuelosInf(UsuarioActual) { TopLevel = false, TopMost = true };
             vuelosInf.FormBorderStyle = FormBorderStyle.None;
             PanelInicio.Controls.Add(vuelosInf);
             vuelosInf.Show();
@@ -71,7 +81,20 @@ namespace Interfaz
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-
+            //Este foreach se usa para eliminar el panel visible actual
+            foreach (Control control in PanelInicio.Controls)
+            {
+                if (control is Form form)
+                {
+                    form.Hide();
+                }
+            }
+            
+            RegistroPagos RegistroPagos = new RegistroPagos(UsuarioActual, this) { TopLevel = false, TopMost = true };
+            RegistroPagos.FormBorderStyle = FormBorderStyle.None;
+            PanelInicio.Controls.Add(RegistroPagos);
+            RegistroPagos.Show();
+            
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
@@ -85,6 +108,11 @@ namespace Interfaz
             LogIn logIn = new LogIn();
             logIn.ShowDialog();
             this.Close();
+        }
+
+        public void Inicio()
+        {
+            btnInicio_Click(new object(), new EventArgs());
         }
     }
 }

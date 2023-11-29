@@ -12,9 +12,19 @@ namespace Interfaz
 {
     public partial class UsrInicio : Form
     {
-        public UsrInicio()
+        Modelo.Usuario UsuarioActual;
+
+        public UsrInicio(Modelo.Usuario user)
         {
+            UsuarioActual = user;
             InitializeComponent();
+            lblNombreUsrInicio.Text = user.Nombres;
+            lblApellidoPUsrInicio.Text = user.ApellidoPaterno;
+            lblApellidoMUsrInicio.Text = user.ApellidoMaterno;                  
+        }
+        public void ActualizarNotificaciones(string notas)
+        {
+            this.lblNotificacionUsuario.Text = notas;
         }
     }
 }

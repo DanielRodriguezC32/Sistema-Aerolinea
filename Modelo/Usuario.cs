@@ -14,5 +14,6 @@ namespace Modelo
         public string ApellidoMaterno { get; set; }
         public string Username { get; set; }
         public string Contrasena { get; set; }
+        public int CantidadDePagosConfigurados { get; set; }
     }
 }

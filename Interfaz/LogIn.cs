@@ -17,7 +17,7 @@ namespace Interfaz
         {
             InitializeComponent();
         }
-        
+
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,15 +39,14 @@ namespace Interfaz
         //Verifica Credenciales
         private void btnSendCred_Click(object sender, EventArgs e)
         {
-            
             var solicitudUser = InputUserCred.Text;
             var solicitudPass = InputPassCred.Text;
-
-            var Username = BusinessLogicLayer.BLL.ValidarUsuario(solicitudUser, solicitudPass);
-            if (Username.UsuarioId > 0)
+            bool usuarioValidado = BusinessLogicLayer.BLL.ValidarUsuario(solicitudUser, solicitudPass);
+            if (usuarioValidado)
             {
+                var Usuario = BusinessLogicLayer.BLL.ObtenerUsuarioPorUserName(solicitudUser);
                 this.Hide();
-                Hub hub = new Hub(Username);
+                Hub hub = new Hub(Usuario);
                 hub.ShowDialog();
                 this.Close();
             }

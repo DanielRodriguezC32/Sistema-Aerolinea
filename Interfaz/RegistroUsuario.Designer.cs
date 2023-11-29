@@ -77,6 +77,7 @@
             this.Regresar.TabIndex = 4;
             this.Regresar.Text = "Cancelar";
             this.Regresar.UseVisualStyleBackColor = true;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
             // lblInst1
             // 

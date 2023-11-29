@@ -17,9 +17,14 @@ namespace BusinessLogicLayer
             return DataAccessLayer.Datos.RegistroUsuario(nuevoUsuario);
         }
 
-        public static Modelo.Usuario ValidarUsuario(string solicitudUser, string solicitudPass)
+        public static bool ValidarUsuario(string solicitudUser, string solicitudPass)
         {
             return DataAccessLayer.Datos.ValidarUsuario(solicitudUser, solicitudPass);
+        }
+
+        public static Usuario ObtenerUsuarioPorUserName(string solicitudUser)
+        {
+            return DataAccessLayer.Datos.ObtenerUsuarioPorUserName(solicitudUser);
         }
 
         public static List<TipoPago> ListaTipoPago()

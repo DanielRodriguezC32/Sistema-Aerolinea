@@ -12,8 +12,10 @@ namespace Interfaz
 {
     public partial class VuelosInf : Form
     {
-        public VuelosInf()
+        Modelo.Usuario user;
+        public VuelosInf(Modelo.Usuario usuario)
         {
+            user = usuario;
             InitializeComponent();
             InicializacionDeComponentesManual();
         }

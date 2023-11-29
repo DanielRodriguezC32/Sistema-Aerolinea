@@ -12,7 +12,8 @@ namespace DataAccessLayer
             var lista = new List<Modelo.Lugar>();
             using (var ctx = new AeropuertoEntitiesRodrigo())
             {
-                return ctx.Lugar.Select(lugar => new Modelo.Lugar() {
+                return ctx.Lugar.Select(lugar => new Modelo.Lugar()
+                {
                     LugarId = lugar.LugarId,
                     Clave = lugar.Clave,
                     Descripcion = lugar.Descripcion
@@ -20,30 +21,48 @@ namespace DataAccessLayer
             }
         }
 
-        public static Modelo.Usuario ValidarUsuario(string solicitudUser, string solicitudPass)
+        public static bool ValidarUsuario(string solicitudUser, string solicitudPass)
+        {
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var user = ctx.Usuario.FirstOrDefault(z => z.Username == solicitudUser && z.Contrasena == solicitudPass);
+                    if (user != null)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static Modelo.Usuario ObtenerUsuarioPorUserName(string solicitudUser)
         {
             var UsuarioSalida = new Modelo.Usuario();
             try
             {
                 using (var ctx = new AeropuertoEntitiesRodrigo())
                 {
-                    var user = ctx.Usuario.FirstOrDefault(z => z.Username == solicitudUser && z.Contrasena == solicitudPass);
-                    if(user != null)
-                    {
-                        UsuarioSalida.ApellidoMaterno = user.ApellidoMaterno;
-                        UsuarioSalida.ApellidoPaterno = user.ApellidoPaterno;
-                        UsuarioSalida.Contrasena = user.Contrasena;
-                        UsuarioSalida.Nombres = user.Nombres;
-                        UsuarioSalida.Username = user.Username;
-                        UsuarioSalida.UsuarioId = user.UsuarioId;
-                    }
+                    var user = ctx.Usuario.FirstOrDefault(z => z.Username == solicitudUser);
+                    UsuarioSalida.ApellidoMaterno = user.ApellidoMaterno;
+                    UsuarioSalida.ApellidoPaterno = user.ApellidoPaterno;
+                    UsuarioSalida.Contrasena = user.Contrasena;
+                    UsuarioSalida.Nombres = user.Nombres;
+                    UsuarioSalida.Username = user.Username;
+                    UsuarioSalida.UsuarioId = user.UsuarioId;
+                    UsuarioSalida.CantidadDePagosConfigurados = ctx.Pago.Where(z => z.UsuarioId == user.UsuarioId).Count();
                 }
                 return UsuarioSalida;
             }
             catch (Exception)
             {
                 return null;
-            }            
+            }
         }
 
         public static bool RegistroUsuario(Modelo.Usuario nuevoUsuario)
@@ -53,7 +72,8 @@ namespace DataAccessLayer
                 using (var ctx = new AeropuertoEntitiesRodrigo())
                 {
                     var usuarios = ctx.Usuario.ToList();
-                    if (usuarios.Any(z => z.Username == nuevoUsuario.Username)){
+                    if (usuarios.Any(z => z.Username == nuevoUsuario.Username))
+                    {
                         return false;
                     }
                     else
@@ -70,7 +90,8 @@ namespace DataAccessLayer
                     }
 
                 }
-            }catch(Exception)
+            }
+            catch (Exception)
             {
                 return false;
             }
@@ -93,11 +114,11 @@ namespace DataAccessLayer
                         AsientosDisponibles = z.NumeroPasajeros - z.Reservacion.Count,
                         Costo = z.Precio
                     });
-                });            
+                });
             }
             return salida;
         }
-        
+
         public static List<Modelo.Reservacion> ReservacionesPorUsuario(int UsuarioId)
         {
             var reservaciones = new List<Modelo.Reservacion>();
@@ -120,11 +141,11 @@ namespace DataAccessLayer
                         //vuelo.FechaSalida;                        
                         reservaciones.Add(Registro);
                     }
-                    
-                }                
+
+                }
             }
             catch (Exception)
-            {                
+            {
             }
             return reservaciones;
         }
@@ -160,9 +181,10 @@ namespace DataAccessLayer
             {
                 using (var ctx = new AeropuertoEntitiesRodrigo())
                 {
-                    salida = ctx.TipoPago.Select(z => new Modelo.TipoPago() { 
-                     Descripcion = z.Descripcion,
-                     TipoPagoId = z.TipoPagoId
+                    salida = ctx.TipoPago.Select(z => new Modelo.TipoPago()
+                    {
+                        Descripcion = z.Descripcion,
+                        TipoPagoId = z.TipoPagoId
                     }).ToList();
                 }
             }
@@ -179,12 +201,13 @@ namespace DataAccessLayer
             {
                 using (var ctx = new AeropuertoEntitiesRodrigo())
                 {
-                    salida = ctx.Pago.Where(z => z.UsuarioId == UsuarioId).Select(z => new Modelo.Pago() { 
-                    PagoId = z.PagoId,
-                    CorreoPaypal = z.CorreoPaypal,
-                    NumeroTarjeta = z.NumeroTarjeta,
-                    TipoPagoId = z.TipoPagoId,
-                    UsuarioId = z.UsuarioId
+                    salida = ctx.Pago.Where(z => z.UsuarioId == UsuarioId).Select(z => new Modelo.Pago()
+                    {
+                        PagoId = z.PagoId,
+                        CorreoPaypal = z.CorreoPaypal,
+                        NumeroTarjeta = z.NumeroTarjeta,
+                        TipoPagoId = z.TipoPagoId,
+                        UsuarioId = z.UsuarioId
                     }).ToList();
                 }
             }
@@ -230,7 +253,7 @@ namespace DataAccessLayer
                     NuevoIdTransaccion = ctx.Transaccion.Last().TransaccionId;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
