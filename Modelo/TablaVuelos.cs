@@ -9,6 +9,7 @@ namespace Modelo
     [Serializable]
     public class TablaVuelos
     {
+        public int VueloId { get; set; }
         public string Desde { get; set; }
         public string Hacia { get; set; }
         public DateTime FechaDeSalida { get; set; }

@@ -47,6 +47,10 @@ namespace BusinessLogicLayer
         {
             return DataAccessLayer.Datos.ListaPagoDeUsuario(UsuarioId);
         }
+        public static bool CrearReservacion(int VueloId, int TransaccionId)
+        {
+            return DataAccessLayer.Datos.CrearReservacion(VueloId, TransaccionId);
+        }
         
     }
 }

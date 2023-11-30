@@ -65,6 +65,11 @@ namespace DataAccessLayer
             }
         }
 
+        public static bool ReservarVuelo(Modelo.Reservacion reservacion)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool RegistroUsuario(Modelo.Usuario nuevoUsuario)
         {
             try
@@ -108,6 +113,7 @@ namespace DataAccessLayer
                 {
                     salida.Add(new Modelo.TablaVuelos()
                     {
+                        VueloId = z.VueloId,
                         Desde = z.Lugar1.Descripcion,
                         Hacia = z.Lugar.Descripcion,
                         FechaDeSalida = z.FechaSalida,

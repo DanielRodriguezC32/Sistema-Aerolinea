@@ -44,15 +44,13 @@ namespace Interfaz
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.cbAerolinea = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vuelosDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // vuelosDisplay
             // 
             this.vuelosDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vuelosDisplay.Location = new System.Drawing.Point(23, 116);
+            this.vuelosDisplay.Location = new System.Drawing.Point(22, 80);
             this.vuelosDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vuelosDisplay.Name = "vuelosDisplay";
             this.vuelosDisplay.RowHeadersWidth = 51;
@@ -63,7 +61,7 @@ namespace Interfaz
             // cbLugarOrigen
             // 
             this.cbLugarOrigen.FormattingEnabled = true;
-            this.cbLugarOrigen.Location = new System.Drawing.Point(102, 50);
+            this.cbLugarOrigen.Location = new System.Drawing.Point(101, 14);
             this.cbLugarOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLugarOrigen.Name = "cbLugarOrigen";
             this.cbLugarOrigen.Size = new System.Drawing.Size(190, 23);
@@ -72,7 +70,7 @@ namespace Interfaz
             // cbLugarDestino
             // 
             this.cbLugarDestino.FormattingEnabled = true;
-            this.cbLugarDestino.Location = new System.Drawing.Point(102, 83);
+            this.cbLugarDestino.Location = new System.Drawing.Point(101, 47);
             this.cbLugarDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLugarDestino.Name = "cbLugarDestino";
             this.cbLugarDestino.Size = new System.Drawing.Size(190, 23);
@@ -81,7 +79,7 @@ namespace Interfaz
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 50);
+            this.label1.Location = new System.Drawing.Point(22, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 3;
@@ -90,7 +88,7 @@ namespace Interfaz
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 83);
+            this.label2.Location = new System.Drawing.Point(22, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 15);
             this.label2.TabIndex = 4;
@@ -98,7 +96,7 @@ namespace Interfaz
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(333, 83);
+            this.btnFiltrar.Location = new System.Drawing.Point(332, 47);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(82, 22);
@@ -107,31 +105,11 @@ namespace Interfaz
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // cbAerolinea
-            // 
-            this.cbAerolinea.FormattingEnabled = true;
-            this.cbAerolinea.Location = new System.Drawing.Point(102, 9);
-            this.cbAerolinea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbAerolinea.Name = "cbAerolinea";
-            this.cbAerolinea.Size = new System.Drawing.Size(190, 23);
-            this.cbAerolinea.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Aerolinea:";
-            // 
             // VuelosInf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 418);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbAerolinea);
+            this.ClientSize = new System.Drawing.Size(700, 383);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -155,7 +133,5 @@ namespace Interfaz
         private Label label1;
         private Label label2;
         private Button btnFiltrar;
-        private ComboBox cbAerolinea;
-        private Label label3;
     }
 }
