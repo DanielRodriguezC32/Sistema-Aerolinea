@@ -65,10 +65,29 @@ namespace DataAccessLayer
             }
         }
 
-        public static bool ReservarVuelo(Modelo.Reservacion reservacion)
+        public static Modelo.Vuelo ObtenerVueloPorId(int vueloId)
         {
-            throw new NotImplementedException();
+            var VueloSalida = new Modelo.Vuelo();
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var v = ctx.Vuelo.FirstOrDefault(z => z.VueloId == vueloId);
+                    VueloSalida.VueloId = v.VueloId;
+                    VueloSalida.Precio = v.Precio;
+                }
+                return VueloSalida;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
+
+        //public static bool ReservarVuelo(Modelo.Reservacion reservacion)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public static bool RegistroUsuario(Modelo.Usuario nuevoUsuario)
         {
@@ -140,11 +159,11 @@ namespace DataAccessLayer
                     foreach (var reservacion in datos)
                     {
                         var Registro = new Modelo.Reservacion();
-                        //Llenar Datos con lo que se necesite, se modifica el POCO Reservacion para toda la info extra
-                        //var vuelo = reservacion.Vuelo;
-                        //vuelo.LugarOrigenId;
-                        //vuelo.LugarDestinoId;
-                        //vuelo.FechaSalida;                        
+                        Registro.ReservacionId = reservacion.ReservacionId;
+                        Registro.TransaccionId = reservacion.TransaccionId;
+                        Registro.VueloId = reservacion.VueloId;
+                        Registro.VueloRutaFecha = "Reservado de " + reservacion.Vuelo.Lugar1.Descripcion + " a " +
+                                                    reservacion.Vuelo.Lugar.Descripcion + " a " + reservacion.Vuelo.FechaSalida;
                         reservaciones.Add(Registro);
                     }
 
@@ -236,14 +255,15 @@ namespace DataAccessLayer
                     ctx.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
+                throw ex;
             }
             return true;
         }
 
-        public static int CrearTransaccion(int PagoId, int Cantidad)
+        public static int CrearTransaccion(int PagoId, decimal Cantidad)
         {
             int NuevoIdTransaccion = 0;
             try
@@ -256,14 +276,14 @@ namespace DataAccessLayer
                     NewTransaccion.Fecha = DateTime.Now;
                     ctx.Transaccion.Add(NewTransaccion);
                     ctx.SaveChanges();
-                    NuevoIdTransaccion = ctx.Transaccion.Last().TransaccionId;
+                    var ultimoTransaccion = ctx.Transaccion.OrderBy(t => t.TransaccionId).First();
+                    return ultimoTransaccion.TransaccionId;
                 }
             }
             catch (Exception)
             {
                 return 0;
             }
-            return NuevoIdTransaccion;
         }
 
 

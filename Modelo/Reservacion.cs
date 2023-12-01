@@ -13,7 +13,7 @@ namespace Modelo
         public int TransaccionId { get; set; }
 
         #region datos informativos
-
+        public string VueloRutaFecha { get; set; }
         #endregion
 
     }

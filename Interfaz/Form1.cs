@@ -16,12 +16,6 @@ namespace Interfaz
         {
             InitializeComponent();
             InicializacionDeComponentesManual();
-
-
-
-
-
-
         }
 
         private void InicializacionDeComponentesManual()

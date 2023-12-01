@@ -13,7 +13,7 @@ namespace Modelo
         public int LugarDestinoId { get; set; }
         public DateTime FechaSalida { get; set; }
         public int NumeroPasajeros { get; set; }
-        public double Precio {  get; set; }
+        public decimal Precio {  get; set; }
         public bool VisaNecesitada { get; set; }
         public bool Habilitado { get; set; }
     }

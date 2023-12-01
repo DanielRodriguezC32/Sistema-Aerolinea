@@ -43,12 +43,19 @@ namespace BusinessLogicLayer
         {
             return DataAccessLayer.Datos.VuelosFiltrados(LugarOrigenId, LugarDestinoId);
         }
+
+        public static Modelo.Vuelo ObtenerVueloPorId(int vueloId)
+        {
+            return DataAccessLayer.Datos.ObtenerVueloPorId(vueloId);
+        }
+
         public static List<Modelo.Pago> ListaPagoDeUsuario(int UsuarioId)
         {
             return DataAccessLayer.Datos.ListaPagoDeUsuario(UsuarioId);
         }
-        public static bool CrearReservacion(int VueloId, int TransaccionId)
+        public static bool CrearReservacion(int VueloId, int PagoId, decimal Cantidad)
         {
+            int TransaccionId = DataAccessLayer.Datos.CrearTransaccion(PagoId, Cantidad);
             return DataAccessLayer.Datos.CrearReservacion(VueloId, TransaccionId);
         }
         

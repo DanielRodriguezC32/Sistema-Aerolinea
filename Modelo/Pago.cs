@@ -13,6 +13,6 @@ namespace Modelo
         public int TipoPagoId { get; set; }
         public string NumeroTarjeta { get; set; }
         public string CorreoPaypal { get; set; }
-
+        public string TipoYDatoParaCombo => TipoPagoId == 3 ? "Paypal - " + CorreoPaypal : "Tarjeta - " + NumeroTarjeta;
     }
 }
