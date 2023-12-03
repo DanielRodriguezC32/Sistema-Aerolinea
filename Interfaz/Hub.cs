@@ -14,7 +14,7 @@ namespace Interfaz
     public partial class Hub : Form
     {
         //para prueba, se crean variables para capturar valores de login
-        private Usuario UsuarioActual;
+        public Usuario UsuarioActual;
 
         public Hub(Usuario UsuarioActualconstructor)
         {
@@ -122,7 +122,7 @@ namespace Interfaz
                     form.Hide();
                 }
             }
-            ConfigUsuario configuser = new ConfigUsuario(UsuarioActual) { TopLevel = false, TopMost = true };
+            ConfigUsuario configuser = new ConfigUsuario(UsuarioActual, this) { TopLevel = false, TopMost = true };
             configuser.FormBorderStyle = FormBorderStyle.None;
             PanelInicio.Controls.Add(configuser);
             configuser.Show();

@@ -39,6 +39,12 @@ namespace BusinessLogicLayer
         {
             return DataAccessLayer.Datos.ReservacionesPorUsuario(UsuarioId);
         }
+
+        public static void ActualizarUsuario(Usuario usuarioActual)
+        {
+            DataAccessLayer.Datos.ActualizarUsuario(usuarioActual);
+        }
+
         public static List<TablaVuelos> VuelosFiltrados(int LugarOrigenId, int LugarDestinoId)
         {
             return DataAccessLayer.Datos.VuelosFiltrados(LugarOrigenId, LugarDestinoId);

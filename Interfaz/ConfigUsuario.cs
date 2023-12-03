@@ -16,35 +16,50 @@ namespace Interfaz
     public partial class ConfigUsuario : Form
     {
         private Usuario UsuarioActual;
-        public ConfigUsuario(Usuario UsuarioActualConstructor)
+        Hub padre;
+        public ConfigUsuario(Usuario UsuarioActualConstructor, Hub papa)
         {
             InitializeComponent();
+            this.padre = papa;
             this.UsuarioActual = UsuarioActualConstructor;
-            lblUsuario.Text = "Usuario: " + UsuarioActual.Username;
             lblNombre.Text = "Nombre: " + UsuarioActual.Nombres;
-            lblMetodo.Text = "Metodo de pago: ";
-            lblCorreo.Text = "Correo: ";
-            lblContraseña.Text = "Contraseña: " + UsuarioActual.Contrasena;
-        }
+            lblApellidoPaterno.Text = "Apellido Paterno: " + UsuarioActual.ApellidoPaterno;
+            lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;
+            txtNewName.Text = UsuarioActual.Nombres;
+            txtNewLastNameP.Text = UsuarioActual.ApellidoPaterno;
+            txtNewLastNameM.Text = UsuarioActual.ApellidoMaterno;
 
-        private void ConfigUsuario_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnUserGen_Click(object sender, EventArgs e)
-        {
-            //verificar que username no exista, cambiar username 
         }
 
         private void btnPassGen_Click(object sender, EventArgs e)
         {
-            //verificar que contraseñas coincidan, cambiar password
+            if(!txtNewPass.Text.Equals(txtNewPassVal.Text) || txtNewPass.Text == string.Empty)
+            {
+                MessageBox.Show("Contraseñas distintas o vacías");
+            }
+            else
+            {
+                UsuarioActual.Contrasena = txtNewPass.Text;
+                BusinessLogicLayer.BLL.ActualizarUsuario(UsuarioActual);
+                
+                lblNombre.Text = "Nombre: " + UsuarioActual.Nombres;
+                lblApellidoPaterno.Text = "Apellido Paterno: " + UsuarioActual.ApellidoPaterno;
+                lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;
+                padre.UsuarioActual = UsuarioActual;
+            }
         }
 
-        private void btnCorreoGen_Click(object sender, EventArgs e)
+        private void btnUserGen_Click(object sender, EventArgs e)
         {
-            //verificar que correo no exista, cambiar o ingresar correo
+            UsuarioActual.Nombres = txtNewName.Text;
+            UsuarioActual.ApellidoPaterno = txtNewLastNameP.Text;
+            UsuarioActual.ApellidoMaterno = txtNewLastNameM.Text;
+            BusinessLogicLayer.BLL.ActualizarUsuario(UsuarioActual);
+            lblNombre.Text = "Nombre: " + UsuarioActual.Nombres;
+            lblApellidoPaterno.Text = "Apellido Paterno: " + UsuarioActual.ApellidoPaterno;
+            lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;
+            padre.lblNom.Text = "Nombre:  " + UsuarioActual.Nombres + " " + UsuarioActual.ApellidoPaterno;
+            padre.UsuarioActual = UsuarioActual;
         }
     }
 }

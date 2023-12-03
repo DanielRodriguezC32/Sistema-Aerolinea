@@ -28,257 +28,239 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new System.Windows.Forms.Panel();
-            lblMetodo = new System.Windows.Forms.Label();
-            lblCorreo = new System.Windows.Forms.Label();
-            lblUsuario = new System.Windows.Forms.Label();
-            lblNombre = new System.Windows.Forms.Label();
-            contextUsuario = new System.Windows.Forms.Label();
-            contextCorreo = new System.Windows.Forms.Label();
-            contextPass = new System.Windows.Forms.Label();
-            guiPass = new System.Windows.Forms.Label();
-            guiPassVal = new System.Windows.Forms.Label();
-            guiCorreo = new System.Windows.Forms.Label();
-            guiUsuario = new System.Windows.Forms.Label();
-            txtNewPass = new System.Windows.Forms.TextBox();
-            txtNewPassVal = new System.Windows.Forms.TextBox();
-            txtNewUser = new System.Windows.Forms.TextBox();
-            txtNewCorreo = new System.Windows.Forms.TextBox();
-            btnUserGen = new System.Windows.Forms.Button();
-            btnPassGen = new System.Windows.Forms.Button();
-            btnCorreoGen = new System.Windows.Forms.Button();
-            lblContraseña = new System.Windows.Forms.Label();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.contextUsuario = new System.Windows.Forms.Label();
+            this.guiPass = new System.Windows.Forms.Label();
+            this.guiPassVal = new System.Windows.Forms.Label();
+            this.guiUsuario = new System.Windows.Forms.Label();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
+            this.txtNewPassVal = new System.Windows.Forms.TextBox();
+            this.txtNewName = new System.Windows.Forms.TextBox();
+            this.btnUserGen = new System.Windows.Forms.Button();
+            this.btnPassGen = new System.Windows.Forms.Button();
+            this.contextPass = new System.Windows.Forms.Label();
+            this.txtNewLastNameP = new System.Windows.Forms.TextBox();
+            this.guiApellidoPaterno = new System.Windows.Forms.Label();
+            this.txtNewLastNameM = new System.Windows.Forms.TextBox();
+            this.guiApellidoMaterno = new System.Windows.Forms.Label();
+            this.lblApellidoPaterno = new System.Windows.Forms.Label();
+            this.lblApellidoMaterno = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(lblContraseña);
-            panel1.Controls.Add(lblMetodo);
-            panel1.Controls.Add(lblCorreo);
-            panel1.Controls.Add(lblUsuario);
-            panel1.Controls.Add(lblNombre);
-            panel1.Location = new System.Drawing.Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(874, 125);
-            panel1.TabIndex = 0;
-            // 
-            // lblMetodo
-            // 
-            lblMetodo.AutoSize = true;
-            lblMetodo.Location = new System.Drawing.Point(303, 16);
-            lblMetodo.Name = "lblMetodo";
-            lblMetodo.Size = new System.Drawing.Size(125, 20);
-            lblMetodo.TabIndex = 3;
-            lblMetodo.Text = "Metodo de pago:";
-            // 
-            // lblCorreo
-            // 
-            lblCorreo.AutoSize = true;
-            lblCorreo.Location = new System.Drawing.Point(564, 16);
-            lblCorreo.Name = "lblCorreo";
-            lblCorreo.Size = new System.Drawing.Size(57, 20);
-            lblCorreo.TabIndex = 2;
-            lblCorreo.Text = "Correo:";
-            // 
-            // lblUsuario
-            // 
-            lblUsuario.AutoSize = true;
-            lblUsuario.Location = new System.Drawing.Point(29, 64);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new System.Drawing.Size(66, 20);
-            lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "Usuario: ";
+            this.panel1.Controls.Add(this.lblApellidoMaterno);
+            this.panel1.Controls.Add(this.lblApellidoPaterno);
+            this.panel1.Controls.Add(this.lblNombre);
+            this.panel1.Location = new System.Drawing.Point(10, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(765, 94);
+            this.panel1.TabIndex = 0;
             // 
             // lblNombre
             // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new System.Drawing.Point(28, 16);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new System.Drawing.Size(67, 20);
-            lblNombre.TabIndex = 0;
-            lblNombre.Text = "Nombre:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(76, 14);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 15);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre:";
             // 
             // contextUsuario
             // 
-            contextUsuario.AutoSize = true;
-            contextUsuario.Location = new System.Drawing.Point(70, 162);
-            contextUsuario.Name = "contextUsuario";
-            contextUsuario.Size = new System.Drawing.Size(178, 20);
-            contextUsuario.TabIndex = 1;
-            contextUsuario.Text = "Configuración de usuario:";
-            // 
-            // contextCorreo
-            // 
-            contextCorreo.AutoSize = true;
-            contextCorreo.Location = new System.Drawing.Point(70, 398);
-            contextCorreo.Name = "contextCorreo";
-            contextCorreo.Size = new System.Drawing.Size(173, 20);
-            contextCorreo.TabIndex = 2;
-            contextCorreo.Text = "Configuracion de correo:";
-            // 
-            // contextPass
-            // 
-            contextPass.AutoSize = true;
-            contextPass.Location = new System.Drawing.Point(70, 245);
-            contextPass.Name = "contextPass";
-            contextPass.Size = new System.Drawing.Size(202, 20);
-            contextPass.TabIndex = 3;
-            contextPass.Text = "Configuración de contraseña:";
+            this.contextUsuario.AutoSize = true;
+            this.contextUsuario.Location = new System.Drawing.Point(61, 121);
+            this.contextUsuario.Name = "contextUsuario";
+            this.contextUsuario.Size = new System.Drawing.Size(146, 15);
+            this.contextUsuario.TabIndex = 1;
+            this.contextUsuario.Text = "Configuración de Nombre";
             // 
             // guiPass
             // 
-            guiPass.AutoSize = true;
-            guiPass.Location = new System.Drawing.Point(126, 296);
-            guiPass.Name = "guiPass";
-            guiPass.Size = new System.Drawing.Size(129, 20);
-            guiPass.TabIndex = 4;
-            guiPass.Text = "Contraseña nueva:";
+            this.guiPass.AutoSize = true;
+            this.guiPass.Location = new System.Drawing.Point(119, 280);
+            this.guiPass.Name = "guiPass";
+            this.guiPass.Size = new System.Drawing.Size(107, 15);
+            this.guiPass.TabIndex = 4;
+            this.guiPass.Text = "Contraseña Nueva:";
             // 
             // guiPassVal
             // 
-            guiPassVal.AutoSize = true;
-            guiPassVal.Location = new System.Drawing.Point(78, 345);
-            guiPassVal.Name = "guiPassVal";
-            guiPassVal.Size = new System.Drawing.Size(177, 20);
-            guiPassVal.TabIndex = 5;
-            guiPassVal.Text = "Reintroduzca Contraseña:";
-            // 
-            // guiCorreo
-            // 
-            guiCorreo.AutoSize = true;
-            guiCorreo.Location = new System.Drawing.Point(198, 434);
-            guiCorreo.Name = "guiCorreo";
-            guiCorreo.Size = new System.Drawing.Size(57, 20);
-            guiCorreo.TabIndex = 6;
-            guiCorreo.Text = "Correo:";
+            this.guiPassVal.AutoSize = true;
+            this.guiPassVal.Location = new System.Drawing.Point(81, 307);
+            this.guiPassVal.Name = "guiPassVal";
+            this.guiPassVal.Size = new System.Drawing.Size(142, 15);
+            this.guiPassVal.TabIndex = 5;
+            this.guiPassVal.Text = "Reintroduzca Contraseña:";
             // 
             // guiUsuario
             // 
-            guiUsuario.AutoSize = true;
-            guiUsuario.Location = new System.Drawing.Point(193, 203);
-            guiUsuario.Name = "guiUsuario";
-            guiUsuario.Size = new System.Drawing.Size(62, 20);
-            guiUsuario.TabIndex = 7;
-            guiUsuario.Text = "Usuario:";
+            this.guiUsuario.AutoSize = true;
+            this.guiUsuario.Location = new System.Drawing.Point(169, 152);
+            this.guiUsuario.Name = "guiUsuario";
+            this.guiUsuario.Size = new System.Drawing.Size(54, 15);
+            this.guiUsuario.TabIndex = 7;
+            this.guiUsuario.Text = "Nombre:";
             // 
             // txtNewPass
             // 
-            txtNewPass.Location = new System.Drawing.Point(266, 296);
-            txtNewPass.Name = "txtNewPass";
-            txtNewPass.Size = new System.Drawing.Size(238, 27);
-            txtNewPass.TabIndex = 8;
+            this.txtNewPass.Location = new System.Drawing.Point(233, 277);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.Size = new System.Drawing.Size(209, 23);
+            this.txtNewPass.TabIndex = 8;
             // 
             // txtNewPassVal
             // 
-            txtNewPassVal.Location = new System.Drawing.Point(266, 345);
-            txtNewPassVal.Name = "txtNewPassVal";
-            txtNewPassVal.Size = new System.Drawing.Size(238, 27);
-            txtNewPassVal.TabIndex = 9;
+            this.txtNewPassVal.Location = new System.Drawing.Point(233, 304);
+            this.txtNewPassVal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPassVal.Name = "txtNewPassVal";
+            this.txtNewPassVal.Size = new System.Drawing.Size(209, 23);
+            this.txtNewPassVal.TabIndex = 9;
             // 
-            // txtNewUser
+            // txtNewName
             // 
-            txtNewUser.Location = new System.Drawing.Point(266, 203);
-            txtNewUser.Name = "txtNewUser";
-            txtNewUser.Size = new System.Drawing.Size(238, 27);
-            txtNewUser.TabIndex = 10;
-            // 
-            // txtNewCorreo
-            // 
-            txtNewCorreo.Location = new System.Drawing.Point(266, 434);
-            txtNewCorreo.Name = "txtNewCorreo";
-            txtNewCorreo.Size = new System.Drawing.Size(238, 27);
-            txtNewCorreo.TabIndex = 11;
+            this.txtNewName.Location = new System.Drawing.Point(233, 152);
+            this.txtNewName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewName.Name = "txtNewName";
+            this.txtNewName.Size = new System.Drawing.Size(209, 23);
+            this.txtNewName.TabIndex = 10;
             // 
             // btnUserGen
             // 
-            btnUserGen.Location = new System.Drawing.Point(539, 203);
-            btnUserGen.Name = "btnUserGen";
-            btnUserGen.Size = new System.Drawing.Size(94, 29);
-            btnUserGen.TabIndex = 12;
-            btnUserGen.Text = "Generar";
-            btnUserGen.UseVisualStyleBackColor = true;
-            btnUserGen.Click += btnUserGen_Click;
+            this.btnUserGen.Location = new System.Drawing.Point(472, 205);
+            this.btnUserGen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUserGen.Name = "btnUserGen";
+            this.btnUserGen.Size = new System.Drawing.Size(123, 22);
+            this.btnUserGen.TabIndex = 12;
+            this.btnUserGen.Text = "Reasignar Nombre";
+            this.btnUserGen.UseVisualStyleBackColor = true;
+            this.btnUserGen.Click += new System.EventHandler(this.btnUserGen_Click);
             // 
             // btnPassGen
             // 
-            btnPassGen.Location = new System.Drawing.Point(539, 344);
-            btnPassGen.Name = "btnPassGen";
-            btnPassGen.Size = new System.Drawing.Size(94, 29);
-            btnPassGen.TabIndex = 13;
-            btnPassGen.Text = "Generar";
-            btnPassGen.UseVisualStyleBackColor = true;
-            btnPassGen.Click += btnPassGen_Click;
+            this.btnPassGen.Location = new System.Drawing.Point(472, 303);
+            this.btnPassGen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPassGen.Name = "btnPassGen";
+            this.btnPassGen.Size = new System.Drawing.Size(123, 22);
+            this.btnPassGen.TabIndex = 13;
+            this.btnPassGen.Text = "Cambiar Contraseña";
+            this.btnPassGen.UseVisualStyleBackColor = true;
+            this.btnPassGen.Click += new System.EventHandler(this.btnPassGen_Click);
             // 
-            // btnCorreoGen
+            // contextPass
             // 
-            btnCorreoGen.Location = new System.Drawing.Point(539, 434);
-            btnCorreoGen.Name = "btnCorreoGen";
-            btnCorreoGen.Size = new System.Drawing.Size(94, 29);
-            btnCorreoGen.TabIndex = 15;
-            btnCorreoGen.Text = "Generar";
-            btnCorreoGen.UseVisualStyleBackColor = true;
-            btnCorreoGen.Click += btnCorreoGen_Click;
+            this.contextPass.AutoSize = true;
+            this.contextPass.Location = new System.Drawing.Point(42, 248);
+            this.contextPass.Name = "contextPass";
+            this.contextPass.Size = new System.Drawing.Size(162, 15);
+            this.contextPass.TabIndex = 3;
+            this.contextPass.Text = "Configuración de Contraseña";
             // 
-            // lblContraseña
+            // txtNewLastNameP
             // 
-            lblContraseña.AutoSize = true;
-            lblContraseña.Location = new System.Drawing.Point(303, 64);
-            lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new System.Drawing.Size(86, 20);
-            lblContraseña.TabIndex = 4;
-            lblContraseña.Text = "Contraseña:";
+            this.txtNewLastNameP.Location = new System.Drawing.Point(233, 179);
+            this.txtNewLastNameP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewLastNameP.Name = "txtNewLastNameP";
+            this.txtNewLastNameP.Size = new System.Drawing.Size(209, 23);
+            this.txtNewLastNameP.TabIndex = 17;
+            // 
+            // guiApellidoPaterno
+            // 
+            this.guiApellidoPaterno.AutoSize = true;
+            this.guiApellidoPaterno.Location = new System.Drawing.Point(125, 182);
+            this.guiApellidoPaterno.Name = "guiApellidoPaterno";
+            this.guiApellidoPaterno.Size = new System.Drawing.Size(98, 15);
+            this.guiApellidoPaterno.TabIndex = 16;
+            this.guiApellidoPaterno.Text = "Apellido Paterno:";
+            // 
+            // txtNewLastNameM
+            // 
+            this.txtNewLastNameM.Location = new System.Drawing.Point(233, 206);
+            this.txtNewLastNameM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewLastNameM.Name = "txtNewLastNameM";
+            this.txtNewLastNameM.Size = new System.Drawing.Size(209, 23);
+            this.txtNewLastNameM.TabIndex = 19;
+            // 
+            // guiApellidoMaterno
+            // 
+            this.guiApellidoMaterno.AutoSize = true;
+            this.guiApellidoMaterno.Location = new System.Drawing.Point(122, 209);
+            this.guiApellidoMaterno.Name = "guiApellidoMaterno";
+            this.guiApellidoMaterno.Size = new System.Drawing.Size(102, 15);
+            this.guiApellidoMaterno.TabIndex = 18;
+            this.guiApellidoMaterno.Text = "Apellido Materno:";
+            // 
+            // lblApellidoPaterno
+            // 
+            this.lblApellidoPaterno.AutoSize = true;
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(32, 38);
+            this.lblApellidoPaterno.Name = "lblApellidoPaterno";
+            this.lblApellidoPaterno.Size = new System.Drawing.Size(98, 15);
+            this.lblApellidoPaterno.TabIndex = 17;
+            this.lblApellidoPaterno.Text = "Apellido Paterno:";
+            // 
+            // lblApellidoMaterno
+            // 
+            this.lblApellidoMaterno.AutoSize = true;
+            this.lblApellidoMaterno.Location = new System.Drawing.Point(28, 62);
+            this.lblApellidoMaterno.Name = "lblApellidoMaterno";
+            this.lblApellidoMaterno.Size = new System.Drawing.Size(102, 15);
+            this.lblApellidoMaterno.TabIndex = 19;
+            this.lblApellidoMaterno.Text = "Apellido Materno:";
             // 
             // ConfigUsuario
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(898, 592);
-            Controls.Add(btnCorreoGen);
-            Controls.Add(btnPassGen);
-            Controls.Add(btnUserGen);
-            Controls.Add(txtNewCorreo);
-            Controls.Add(txtNewUser);
-            Controls.Add(txtNewPassVal);
-            Controls.Add(txtNewPass);
-            Controls.Add(guiUsuario);
-            Controls.Add(guiCorreo);
-            Controls.Add(guiPassVal);
-            Controls.Add(guiPass);
-            Controls.Add(contextPass);
-            Controls.Add(contextCorreo);
-            Controls.Add(contextUsuario);
-            Controls.Add(panel1);
-            Name = "ConfigUsuario";
-            Text = "ConfigUsuario";
-            Load += ConfigUsuario_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(786, 444);
+            this.Controls.Add(this.txtNewLastNameM);
+            this.Controls.Add(this.guiApellidoMaterno);
+            this.Controls.Add(this.txtNewLastNameP);
+            this.Controls.Add(this.guiApellidoPaterno);
+            this.Controls.Add(this.btnPassGen);
+            this.Controls.Add(this.btnUserGen);
+            this.Controls.Add(this.txtNewName);
+            this.Controls.Add(this.txtNewPassVal);
+            this.Controls.Add(this.txtNewPass);
+            this.Controls.Add(this.guiUsuario);
+            this.Controls.Add(this.guiPassVal);
+            this.Controls.Add(this.guiPass);
+            this.Controls.Add(this.contextPass);
+            this.Controls.Add(this.contextUsuario);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ConfigUsuario";
+            this.Text = "ConfigUsuario";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMetodo;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label contextUsuario;
-        private System.Windows.Forms.Label contextCorreo;
-        private System.Windows.Forms.Label contextPass;
         private System.Windows.Forms.Label guiPass;
         private System.Windows.Forms.Label guiPassVal;
-        private System.Windows.Forms.Label guiCorreo;
         private System.Windows.Forms.Label guiUsuario;
-        private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.TextBox txtNewPass;
         private System.Windows.Forms.TextBox txtNewPassVal;
-        private System.Windows.Forms.TextBox txtNewUser;
-        private System.Windows.Forms.TextBox txtNewCorreo;
+        private System.Windows.Forms.TextBox txtNewName;
         private System.Windows.Forms.Button btnUserGen;
         private System.Windows.Forms.Button btnPassGen;
-        private System.Windows.Forms.Button btnCorreoGen;
+        private System.Windows.Forms.Label contextPass;
+        private System.Windows.Forms.TextBox txtNewLastNameP;
+        private System.Windows.Forms.Label guiApellidoPaterno;
+        private System.Windows.Forms.TextBox txtNewLastNameM;
+        private System.Windows.Forms.Label guiApellidoMaterno;
+        private System.Windows.Forms.Label lblApellidoMaterno;
+        private System.Windows.Forms.Label lblApellidoPaterno;
     }
 }

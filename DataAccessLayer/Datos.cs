@@ -65,6 +65,26 @@ namespace DataAccessLayer
             }
         }
 
+        public static void ActualizarUsuario(Modelo.Usuario usuarioActual)
+        {
+            try
+            {
+                using (var ctx = new AeropuertoEntitiesRodrigo())
+                {
+                    var user = ctx.Usuario.FirstOrDefault(z => z.Username == usuarioActual.Username);
+                    user.Nombres = usuarioActual.Nombres; 
+                    user.ApellidoMaterno = usuarioActual.ApellidoMaterno;
+                    user.ApellidoPaterno = usuarioActual.ApellidoPaterno;
+                    user.Contrasena = usuarioActual.Contrasena;
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
         public static Modelo.Vuelo ObtenerVueloPorId(int vueloId)
         {
             var VueloSalida = new Modelo.Vuelo();
@@ -276,7 +296,7 @@ namespace DataAccessLayer
                     NewTransaccion.Fecha = DateTime.Now;
                     ctx.Transaccion.Add(NewTransaccion);
                     ctx.SaveChanges();
-                    var ultimoTransaccion = ctx.Transaccion.OrderBy(t => t.TransaccionId).First();
+                    var ultimoTransaccion = ctx.Transaccion.OrderByDescending(t => t.TransaccionId).First();
                     return ultimoTransaccion.TransaccionId;
                 }
             }
