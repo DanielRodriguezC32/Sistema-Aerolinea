@@ -58,9 +58,10 @@ namespace Interfaz
             else
             {
                 notas = "Sin notificaciones por el momento...";
-            }
+            }            
             usrInicio.ActualizarNotificaciones(notas);
-            usrInicio.Show();
+            usrInicio.ActualizarReservaciones();
+            usrInicio.Show();            
         }
 
         private void btnVuelos_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace Interfaz
                     form.Hide();
                 }
             }
-            VuelosInf vuelosInf = new VuelosInf(UsuarioActual) { TopLevel = false, TopMost = true };
+            VuelosInf vuelosInf = new VuelosInf(UsuarioActual, this) { TopLevel = false, TopMost = true };
             vuelosInf.FormBorderStyle = FormBorderStyle.None;
             PanelInicio.Controls.Add(vuelosInf);
             vuelosInf.Show();

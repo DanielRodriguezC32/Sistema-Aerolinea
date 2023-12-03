@@ -13,9 +13,11 @@ namespace Interfaz
     public partial class VuelosInf : Form
     {
         Modelo.Usuario user;
-        public VuelosInf(Modelo.Usuario usuario)
+        Hub padre;
+        public VuelosInf(Modelo.Usuario usuario, Hub papa)
         {
             user = usuario;
+            padre = papa;
             InitializeComponent();
             InicializacionDeComponentesManual();
         }
@@ -36,19 +38,25 @@ namespace Interfaz
 
         private void VuelosDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
-            {                
-                int vueloId = (int)vuelosDisplay.Rows[e.RowIndex].Tag;
-                //Aqui se debe abrir otra ventanita o algo para realizar la transaccion, ya con una transaccion, obtenemos su transaccionId
-                //y podemos usar el metodo ReservarVuelo(vueloId, transaccionId)
-                
+            try
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+                {
+                    int vueloId = (int)vuelosDisplay.Rows[e.RowIndex].Tag;
+                    this.Hide();
+                    var vuelo = BusinessLogicLayer.BLL.ObtenerVueloPorId(vueloId);
+                    RealizarTransaccion TransaccionVentana = new RealizarTransaccion(vuelo, padre, user.UsuarioId);
+                    TransaccionVentana.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                this.btnFiltrar_Click(new object(), new EventArgs());
+                this.Show();
             }
         }
 
-        private void ReservarVuelo(int vueloId, int transaccionid)
-        {
-            BusinessLogicLayer.BLL.CrearReservacion(vueloId, transaccionid);
-        }
+        
 
         private void GridViewSetup()
         {
@@ -90,7 +98,7 @@ namespace Interfaz
 
             // Configurar el evento CellContentClick para manejar clics en el botón "Reservar Vuelo"
             vuelosDisplay.CellContentClick += VuelosDisplay_CellContentClick;
-            
+
 
         }
 
@@ -104,7 +112,7 @@ namespace Interfaz
                 // Obtener el VueloId y almacenarlo en la propiedad Tag de la fila
                 int vueloId = ((Modelo.TablaVuelos)row.DataBoundItem).VueloId;
                 row.Tag = vueloId;
-            }            
+            }
         }
     }
 }
