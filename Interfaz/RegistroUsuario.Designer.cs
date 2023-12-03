@@ -28,122 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRegUsrNew = new System.Windows.Forms.Button();
-            this.InputNewUsrCred = new System.Windows.Forms.TextBox();
-            this.InputNewPassCred = new System.Windows.Forms.TextBox();
-            this.Regresar = new System.Windows.Forms.Button();
-            this.lblInst1 = new System.Windows.Forms.Label();
-            this.InputNewNombreCred = new System.Windows.Forms.TextBox();
-            this.InputNewApellidoPCred = new System.Windows.Forms.TextBox();
-            this.InputNewApellidoMCred = new System.Windows.Forms.TextBox();
-            this.NewPassValid = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            btnRegUsrNew = new System.Windows.Forms.Button();
+            InputNewUsrCred = new System.Windows.Forms.TextBox();
+            InputNewPassCred = new System.Windows.Forms.TextBox();
+            Regresar = new System.Windows.Forms.Button();
+            lblInst1 = new System.Windows.Forms.Label();
+            InputNewNombreCred = new System.Windows.Forms.TextBox();
+            InputNewApellidoPCred = new System.Windows.Forms.TextBox();
+            InputNewApellidoMCred = new System.Windows.Forms.TextBox();
+            NewPassValid = new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // btnRegUsrNew
             // 
-            this.btnRegUsrNew.Location = new System.Drawing.Point(128, 221);
-            this.btnRegUsrNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegUsrNew.Name = "btnRegUsrNew";
-            this.btnRegUsrNew.Size = new System.Drawing.Size(82, 22);
-            this.btnRegUsrNew.TabIndex = 0;
-            this.btnRegUsrNew.Text = "Continuar";
-            this.btnRegUsrNew.UseVisualStyleBackColor = true;
-            this.btnRegUsrNew.Click += new System.EventHandler(this.btnRegUsrNew_Click);
+            btnRegUsrNew.Location = new System.Drawing.Point(146, 295);
+            btnRegUsrNew.Name = "btnRegUsrNew";
+            btnRegUsrNew.Size = new System.Drawing.Size(94, 29);
+            btnRegUsrNew.TabIndex = 7;
+            btnRegUsrNew.Text = "Continuar";
+            btnRegUsrNew.UseVisualStyleBackColor = true;
+            btnRegUsrNew.Click += btnRegUsrNew_Click;
             // 
             // InputNewUsrCred
             // 
-            this.InputNewUsrCred.Location = new System.Drawing.Point(49, 146);
-            this.InputNewUsrCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InputNewUsrCred.Name = "InputNewUsrCred";
-            this.InputNewUsrCred.PlaceholderText = "Nombre de Usuario";
-            this.InputNewUsrCred.Size = new System.Drawing.Size(263, 23);
-            this.InputNewUsrCred.TabIndex = 1;
+            InputNewUsrCred.Location = new System.Drawing.Point(56, 195);
+            InputNewUsrCred.Name = "InputNewUsrCred";
+            InputNewUsrCred.PlaceholderText = "Nombre de Usuario";
+            InputNewUsrCred.Size = new System.Drawing.Size(300, 27);
+            InputNewUsrCred.TabIndex = 4;
             // 
             // InputNewPassCred
             // 
-            this.InputNewPassCred.Location = new System.Drawing.Point(49, 171);
-            this.InputNewPassCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InputNewPassCred.Name = "InputNewPassCred";
-            this.InputNewPassCred.PlaceholderText = "Contrasena";
-            this.InputNewPassCred.Size = new System.Drawing.Size(263, 23);
-            this.InputNewPassCred.TabIndex = 2;
+            InputNewPassCred.Location = new System.Drawing.Point(56, 228);
+            InputNewPassCred.Name = "InputNewPassCred";
+            InputNewPassCred.PlaceholderText = "Contrasena";
+            InputNewPassCred.Size = new System.Drawing.Size(300, 27);
+            InputNewPassCred.TabIndex = 5;
             // 
             // Regresar
             // 
-            this.Regresar.Location = new System.Drawing.Point(49, 282);
-            this.Regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Regresar.Name = "Regresar";
-            this.Regresar.Size = new System.Drawing.Size(82, 22);
-            this.Regresar.TabIndex = 4;
-            this.Regresar.Text = "Cancelar";
-            this.Regresar.UseVisualStyleBackColor = true;
-            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
+            Regresar.Location = new System.Drawing.Point(56, 376);
+            Regresar.Name = "Regresar";
+            Regresar.Size = new System.Drawing.Size(94, 29);
+            Regresar.TabIndex = 8;
+            Regresar.Text = "Cancelar";
+            Regresar.UseVisualStyleBackColor = true;
+            Regresar.Click += Regresar_Click;
             // 
             // lblInst1
             // 
-            this.lblInst1.AutoSize = true;
-            this.lblInst1.Location = new System.Drawing.Point(49, 20);
-            this.lblInst1.Name = "lblInst1";
-            this.lblInst1.Size = new System.Drawing.Size(168, 15);
-            this.lblInst1.TabIndex = 5;
-            this.lblInst1.Text = "Registro de Usuario Nuevo ......";
+            lblInst1.AutoSize = true;
+            lblInst1.Location = new System.Drawing.Point(56, 27);
+            lblInst1.Name = "lblInst1";
+            lblInst1.Size = new System.Drawing.Size(208, 20);
+            lblInst1.TabIndex = 0;
+            lblInst1.Text = "Registro de Usuario Nuevo ......";
             // 
             // InputNewNombreCred
             // 
-            this.InputNewNombreCred.Location = new System.Drawing.Point(49, 44);
-            this.InputNewNombreCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InputNewNombreCred.Name = "InputNewNombreCred";
-            this.InputNewNombreCred.PlaceholderText = "Nombre";
-            this.InputNewNombreCred.Size = new System.Drawing.Size(263, 23);
-            this.InputNewNombreCred.TabIndex = 6;
+            InputNewNombreCred.Location = new System.Drawing.Point(56, 59);
+            InputNewNombreCred.Name = "InputNewNombreCred";
+            InputNewNombreCred.PlaceholderText = "Nombre";
+            InputNewNombreCred.Size = new System.Drawing.Size(300, 27);
+            InputNewNombreCred.TabIndex = 1;
             // 
             // InputNewApellidoPCred
             // 
-            this.InputNewApellidoPCred.Location = new System.Drawing.Point(49, 68);
-            this.InputNewApellidoPCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InputNewApellidoPCred.Name = "InputNewApellidoPCred";
-            this.InputNewApellidoPCred.PlaceholderText = "Apellido Paterno";
-            this.InputNewApellidoPCred.Size = new System.Drawing.Size(263, 23);
-            this.InputNewApellidoPCred.TabIndex = 7;
+            InputNewApellidoPCred.Location = new System.Drawing.Point(56, 91);
+            InputNewApellidoPCred.Name = "InputNewApellidoPCred";
+            InputNewApellidoPCred.PlaceholderText = "Apellido Paterno";
+            InputNewApellidoPCred.Size = new System.Drawing.Size(300, 27);
+            InputNewApellidoPCred.TabIndex = 2;
             // 
             // InputNewApellidoMCred
             // 
-            this.InputNewApellidoMCred.Location = new System.Drawing.Point(49, 93);
-            this.InputNewApellidoMCred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InputNewApellidoMCred.Name = "InputNewApellidoMCred";
-            this.InputNewApellidoMCred.PlaceholderText = "Apellido Materno";
-            this.InputNewApellidoMCred.Size = new System.Drawing.Size(263, 23);
-            this.InputNewApellidoMCred.TabIndex = 8;
+            InputNewApellidoMCred.Location = new System.Drawing.Point(56, 124);
+            InputNewApellidoMCred.Name = "InputNewApellidoMCred";
+            InputNewApellidoMCred.PlaceholderText = "Apellido Materno";
+            InputNewApellidoMCred.Size = new System.Drawing.Size(300, 27);
+            InputNewApellidoMCred.TabIndex = 3;
             // 
             // NewPassValid
             // 
-            this.NewPassValid.Location = new System.Drawing.Point(49, 196);
-            this.NewPassValid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NewPassValid.Name = "NewPassValid";
-            this.NewPassValid.PlaceholderText = "Reintroduzca Contrasena";
-            this.NewPassValid.Size = new System.Drawing.Size(263, 23);
-            this.NewPassValid.TabIndex = 9;
+            NewPassValid.Location = new System.Drawing.Point(56, 261);
+            NewPassValid.Name = "NewPassValid";
+            NewPassValid.PlaceholderText = "Reintroduzca Contrasena";
+            NewPassValid.Size = new System.Drawing.Size(300, 27);
+            NewPassValid.TabIndex = 6;
             // 
             // RegistroUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 338);
-            this.Controls.Add(this.NewPassValid);
-            this.Controls.Add(this.InputNewApellidoMCred);
-            this.Controls.Add(this.InputNewApellidoPCred);
-            this.Controls.Add(this.InputNewNombreCred);
-            this.Controls.Add(this.lblInst1);
-            this.Controls.Add(this.Regresar);
-            this.Controls.Add(this.InputNewPassCred);
-            this.Controls.Add(this.InputNewUsrCred);
-            this.Controls.Add(this.btnRegUsrNew);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "RegistroUsuario";
-            this.Text = "Registro de usuario nuevo";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(427, 451);
+            Controls.Add(NewPassValid);
+            Controls.Add(InputNewApellidoMCred);
+            Controls.Add(InputNewApellidoPCred);
+            Controls.Add(InputNewNombreCred);
+            Controls.Add(lblInst1);
+            Controls.Add(Regresar);
+            Controls.Add(InputNewPassCred);
+            Controls.Add(InputNewUsrCred);
+            Controls.Add(btnRegUsrNew);
+            Name = "RegistroUsuario";
+            Text = "Registro de usuario nuevo";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -15,7 +15,7 @@ namespace Interfaz
     {
         //para prueba, se crean variables para capturar valores de login
         private Usuario UsuarioActual;
-        
+
         public Hub(Usuario UsuarioActualconstructor)
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Interfaz
         private void MostrarCredencialesDeLogIn()
         {
             lblUser.Text = "Usuario: " + UsuarioActual.Username;
-            lblNom.Text = "Nombre:  " + UsuarioActual.Nombres+ " "+ UsuarioActual.ApellidoPaterno;
+            lblNom.Text = "Nombre:  " + UsuarioActual.Nombres + " " + UsuarioActual.ApellidoPaterno;
         }
         // Final de codigo para pruebas
 
@@ -60,7 +60,7 @@ namespace Interfaz
                 notas = "Sin notificaciones por el momento...";
             }
             usrInicio.ActualizarNotificaciones(notas);
-            usrInicio.Show();            
+            usrInicio.Show();
         }
 
         private void btnVuelos_Click(object sender, EventArgs e)
@@ -89,18 +89,15 @@ namespace Interfaz
                     form.Hide();
                 }
             }
-            
+
             RegistroPagos RegistroPagos = new RegistroPagos(UsuarioActual, this) { TopLevel = false, TopMost = true };
             RegistroPagos.FormBorderStyle = FormBorderStyle.None;
             PanelInicio.Controls.Add(RegistroPagos);
             RegistroPagos.Show();
-            
-        }
-
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
 
         }
+
+        
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -113,6 +110,21 @@ namespace Interfaz
         public void Inicio()
         {
             btnInicio_Click(new object(), new EventArgs());
+        }
+
+        private void btnConfig_Click_1(object sender, EventArgs e)
+        {
+            foreach (Control control in PanelInicio.Controls)
+            {
+                if (control is Form form)
+                {
+                    form.Hide();
+                }
+            }
+            ConfigUsuario configuser = new ConfigUsuario(UsuarioActual) { TopLevel = false, TopMost = true };
+            configuser.FormBorderStyle = FormBorderStyle.None;
+            PanelInicio.Controls.Add(configuser);
+            configuser.Show();
         }
     }
 }

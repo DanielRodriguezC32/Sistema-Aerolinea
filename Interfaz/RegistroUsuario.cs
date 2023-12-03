@@ -37,17 +37,17 @@ namespace Interfaz
                     ApellidoMaterno = NewApellidoM
                 };
 
-                bool UsuarioCreado = BusinessLogicLayer.BLL.RegistroUsuario(nuevoUsuario);                
+                bool UsuarioCreado = BusinessLogicLayer.BLL.RegistroUsuario(nuevoUsuario);
 
                 if (UsuarioCreado)
                 {
                     MessageBox.Show("Quedaste registrado!", " ", MessageBoxButtons.OK);
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Hubo un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }                
-                
+                }
+
                 this.Close();
             }
             else
