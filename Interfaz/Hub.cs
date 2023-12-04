@@ -58,10 +58,10 @@ namespace Interfaz
             else
             {
                 notas = "Sin notificaciones por el momento...";
-            }            
+            }
             usrInicio.ActualizarNotificaciones(notas);
             usrInicio.ActualizarReservaciones();
-            usrInicio.Show();            
+            usrInicio.Show();
         }
 
         private void btnVuelos_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace Interfaz
 
         }
 
-        
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

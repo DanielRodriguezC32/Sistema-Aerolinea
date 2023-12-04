@@ -33,7 +33,7 @@ namespace Interfaz
 
         private void btnPassGen_Click(object sender, EventArgs e)
         {
-            if(!txtNewPass.Text.Equals(txtNewPassVal.Text) || txtNewPass.Text == string.Empty)
+            if (!txtNewPass.Text.Equals(txtNewPassVal.Text) || txtNewPass.Text == string.Empty)
             {
                 MessageBox.Show("Contraseñas distintas o vacías");
             }
@@ -41,7 +41,7 @@ namespace Interfaz
             {
                 UsuarioActual.Contrasena = txtNewPass.Text;
                 BusinessLogicLayer.BLL.ActualizarUsuario(UsuarioActual);
-                
+
                 lblNombre.Text = "Nombre: " + UsuarioActual.Nombres;
                 lblApellidoPaterno.Text = "Apellido Paterno: " + UsuarioActual.ApellidoPaterno;
                 lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;

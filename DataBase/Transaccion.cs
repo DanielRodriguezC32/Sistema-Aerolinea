@@ -25,8 +25,8 @@ namespace DataBase
         public decimal Cantidad { get; set; }
         public System.DateTime Fecha { get; set; }
     
-        public virtual Pago Pago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservacion> Reservacion { get; set; }
+        public virtual Pago Pago { get; set; }
     }
 }

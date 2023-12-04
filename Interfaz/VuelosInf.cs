@@ -56,7 +56,7 @@ namespace Interfaz
             }
         }
 
-        
+
 
         private void GridViewSetup()
         {

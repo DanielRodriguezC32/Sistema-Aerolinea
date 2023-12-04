@@ -26,11 +26,11 @@ namespace DataBase
         }
     
         public virtual DbSet<Lugar> Lugar { get; set; }
-        public virtual DbSet<Pago> Pago { get; set; }
         public virtual DbSet<Reservacion> Reservacion { get; set; }
         public virtual DbSet<TipoPago> TipoPago { get; set; }
         public virtual DbSet<Transaccion> Transaccion { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vuelo> Vuelo { get; set; }
+        public virtual DbSet<Pago> Pago { get; set; }
     }
 }
