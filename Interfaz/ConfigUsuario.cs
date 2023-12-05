@@ -46,6 +46,7 @@ namespace Interfaz
                 lblApellidoPaterno.Text = "Apellido Paterno: " + UsuarioActual.ApellidoPaterno;
                 lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;
                 padre.UsuarioActual = UsuarioActual;
+                MessageBox.Show("Datos actualizados");
             }
         }
 
@@ -60,6 +61,7 @@ namespace Interfaz
             lblApellidoMaterno.Text = "Apellido Materno: " + UsuarioActual.ApellidoMaterno;
             padre.lblNom.Text = "Nombre:  " + UsuarioActual.Nombres + " " + UsuarioActual.ApellidoPaterno;
             padre.UsuarioActual = UsuarioActual;
+            MessageBox.Show("Datos actualizados");
         }
     }
 }
