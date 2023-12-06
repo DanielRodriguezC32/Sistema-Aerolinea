@@ -26,9 +26,9 @@ namespace Interfaz
 
         private void Regresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LogIn logIn = new LogIn();
-            logIn.ShowDialog();
+            //this.Hide();
+            //LogIn logIn = new LogIn();
+            //logIn.ShowDialog();
             this.Close();
         }
 
@@ -45,7 +45,7 @@ namespace Interfaz
                 MessageBox.Show("Hubo un error, contáctese con el administrador del sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             padre.Inicio();
-            this.Close();            
+            this.Close();
         }
 
         private void cbPago_SelectedIndexChanged(object sender, EventArgs e)

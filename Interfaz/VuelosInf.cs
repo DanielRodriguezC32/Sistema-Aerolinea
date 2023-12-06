@@ -43,7 +43,7 @@ namespace Interfaz
                 if (e.RowIndex >= 0 && e.ColumnIndex == 5)
                 {
                     int vueloId = (int)vuelosDisplay.Rows[e.RowIndex].Tag;
-                    this.Hide();
+                    //this.Hide();
                     var vuelo = BusinessLogicLayer.BLL.ObtenerVueloPorId(vueloId);
                     RealizarTransaccion TransaccionVentana = new RealizarTransaccion(vuelo, padre, user.UsuarioId);
                     TransaccionVentana.ShowDialog();
@@ -94,6 +94,8 @@ namespace Interfaz
             columnaReservar.HeaderText = "Reservar Vuelo";
             columnaReservar.Text = "Reservar Vuelo";
             columnaReservar.UseColumnTextForButtonValue = true;
+            columnaReservar.FlatStyle = FlatStyle.Popup;
+            columnaReservar.DefaultCellStyle.BackColor = Color.AliceBlue;
             vuelosDisplay.Columns.Add(columnaReservar);
 
             // Configurar el evento CellContentClick para manejar clics en el botón "Reservar Vuelo"

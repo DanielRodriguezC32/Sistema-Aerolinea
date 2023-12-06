@@ -38,6 +38,7 @@ namespace Interfaz
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             vuelosDisplay = new DataGridView();
             cbLugarOrigen = new ComboBox();
             cbLugarDestino = new ComboBox();
@@ -49,8 +50,16 @@ namespace Interfaz
             // 
             // vuelosDisplay
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            vuelosDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             vuelosDisplay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            vuelosDisplay.Location = new Point(25, 107);
+            vuelosDisplay.Location = new Point(62, 197);
             vuelosDisplay.Name = "vuelosDisplay";
             vuelosDisplay.RowHeadersWidth = 51;
             vuelosDisplay.RowTemplate.Height = 29;
@@ -60,7 +69,7 @@ namespace Interfaz
             // cbLugarOrigen
             // 
             cbLugarOrigen.FormattingEnabled = true;
-            cbLugarOrigen.Location = new Point(115, 19);
+            cbLugarOrigen.Location = new Point(152, 59);
             cbLugarOrigen.Name = "cbLugarOrigen";
             cbLugarOrigen.Size = new Size(217, 28);
             cbLugarOrigen.TabIndex = 1;
@@ -68,7 +77,7 @@ namespace Interfaz
             // cbLugarDestino
             // 
             cbLugarDestino.FormattingEnabled = true;
-            cbLugarDestino.Location = new Point(115, 63);
+            cbLugarDestino.Location = new Point(152, 103);
             cbLugarDestino.Name = "cbLugarDestino";
             cbLugarDestino.Size = new Size(217, 28);
             cbLugarDestino.TabIndex = 2;
@@ -76,36 +85,46 @@ namespace Interfaz
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 19);
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(66, 66, 66);
+            label1.Location = new Point(62, 59);
             label1.Name = "label1";
-            label1.Size = new Size(57, 20);
+            label1.Size = new Size(60, 20);
             label1.TabIndex = 3;
             label1.Text = "Origen:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 63);
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(66, 66, 66);
+            label2.Location = new Point(62, 103);
             label2.Name = "label2";
-            label2.Size = new Size(63, 20);
+            label2.Size = new Size(65, 20);
             label2.TabIndex = 4;
             label2.Text = "Destino:";
             // 
             // btnFiltrar
             // 
-            btnFiltrar.Location = new Point(379, 63);
+            btnFiltrar.BackColor = Color.FromArgb(235, 242, 252);
+            btnFiltrar.FlatAppearance.BorderSize = 0;
+            btnFiltrar.FlatStyle = FlatStyle.Popup;
+            btnFiltrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltrar.ForeColor = Color.FromArgb(66, 66, 66);
+            btnFiltrar.Location = new Point(416, 103);
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Size = new Size(94, 29);
             btnFiltrar.TabIndex = 5;
             btnFiltrar.Text = "Filtrar";
-            btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.UseVisualStyleBackColor = false;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
             // VuelosInf
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 511);
+            BackColor = Color.FromArgb(235, 242, 252);
+            ClientSize = new Size(928, 647);
             Controls.Add(btnFiltrar);
             Controls.Add(label2);
             Controls.Add(label1);

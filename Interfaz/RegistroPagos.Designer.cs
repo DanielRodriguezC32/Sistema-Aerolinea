@@ -38,7 +38,9 @@
             // 
             // btnRegTipoPagoNew
             // 
-            btnRegTipoPagoNew.Location = new System.Drawing.Point(258, 272);
+            btnRegTipoPagoNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnRegTipoPagoNew.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnRegTipoPagoNew.Location = new System.Drawing.Point(430, 347);
             btnRegTipoPagoNew.Name = "btnRegTipoPagoNew";
             btnRegTipoPagoNew.Size = new System.Drawing.Size(94, 29);
             btnRegTipoPagoNew.TabIndex = 8;
@@ -49,51 +51,57 @@
             // lblInst1
             // 
             lblInst1.AutoSize = true;
-            lblInst1.Location = new System.Drawing.Point(25, 36);
+            lblInst1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblInst1.Location = new System.Drawing.Point(331, 140);
             lblInst1.Name = "lblInst1";
-            lblInst1.Size = new System.Drawing.Size(281, 20);
+            lblInst1.Size = new System.Drawing.Size(294, 20);
             lblInst1.TabIndex = 5;
             lblInst1.Text = "Registro de Metodos de Pago Nuevos ......";
             // 
             // InputNewCorreoTarjeta
             // 
-            InputNewCorreoTarjeta.Location = new System.Drawing.Point(155, 165);
+            InputNewCorreoTarjeta.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            InputNewCorreoTarjeta.Location = new System.Drawing.Point(350, 271);
             InputNewCorreoTarjeta.Name = "InputNewCorreoTarjeta";
-            InputNewCorreoTarjeta.Size = new System.Drawing.Size(258, 27);
+            InputNewCorreoTarjeta.Size = new System.Drawing.Size(249, 27);
             InputNewCorreoTarjeta.TabIndex = 7;
             // 
             // cbTiposDePago
             // 
+            cbTiposDePago.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             cbTiposDePago.FormattingEnabled = true;
-            cbTiposDePago.Location = new System.Drawing.Point(155, 99);
+            cbTiposDePago.Location = new System.Drawing.Point(350, 206);
             cbTiposDePago.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             cbTiposDePago.Name = "cbTiposDePago";
-            cbTiposDePago.Size = new System.Drawing.Size(209, 28);
+            cbTiposDePago.Size = new System.Drawing.Size(249, 28);
             cbTiposDePago.TabIndex = 0;
             // 
             // lblTipoPagoCb
             // 
             lblTipoPagoCb.AutoSize = true;
-            lblTipoPagoCb.Location = new System.Drawing.Point(43, 103);
+            lblTipoPagoCb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTipoPagoCb.Location = new System.Drawing.Point(241, 209);
             lblTipoPagoCb.Name = "lblTipoPagoCb";
-            lblTipoPagoCb.Size = new System.Drawing.Size(99, 20);
+            lblTipoPagoCb.Size = new System.Drawing.Size(103, 20);
             lblTipoPagoCb.TabIndex = 9;
-            lblTipoPagoCb.Text = "Tipo de pago";
+            lblTipoPagoCb.Text = "Tipo de pago:";
             // 
             // lbl
             // 
             lbl.AutoSize = true;
-            lbl.Location = new System.Drawing.Point(43, 169);
+            lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbl.Location = new System.Drawing.Point(221, 274);
             lbl.Name = "lbl";
-            lbl.Size = new System.Drawing.Size(115, 20);
+            lbl.Size = new System.Drawing.Size(123, 20);
             lbl.TabIndex = 10;
-            lbl.Text = "Tarjeta o Correo";
+            lbl.Text = "Tarjeta o Correo:";
             // 
             // RegistroPagos
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(450, 377);
+            BackColor = System.Drawing.Color.FromArgb(235, 242, 252);
+            ClientSize = new System.Drawing.Size(928, 647);
             Controls.Add(lbl);
             Controls.Add(lblTipoPagoCb);
             Controls.Add(cbTiposDePago);
@@ -101,6 +109,7 @@
             Controls.Add(lblInst1);
             Controls.Add(btnRegTipoPagoNew);
             Name = "RegistroPagos";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "Registro de metodos de pago";
             ResumeLayout(false);
             PerformLayout();

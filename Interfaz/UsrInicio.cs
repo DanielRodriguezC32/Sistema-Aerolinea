@@ -35,7 +35,8 @@ namespace Interfaz
             reservaciones = BusinessLogicLayer.BLL.ReservacionesPorUsuario(UsuarioActual.UsuarioId);
             GenerarBoletoQR1.Visible = GenerarBoletoQR2.Visible = GenerarBoletoQR3.Visible = GenerarBoletoQR4.Visible
              = GenerarBoletoQR5.Visible = GenerarBoletoQR6.Visible = false;
-            if (reservaciones.Count <= 6) {
+            if (reservaciones.Count <= 6)
+            {
                 switch (reservaciones.Count)
                 {
                     case 6: lblReservacionesListaUsrInicio6.Text = reservaciones[5].VueloRutaFecha; GenerarBoletoQR6.Visible = true; goto case 5;
@@ -44,7 +45,7 @@ namespace Interfaz
                     case 3: lblReservacionesListaUsrInicio3.Text = reservaciones[2].VueloRutaFecha; GenerarBoletoQR3.Visible = true; goto case 2;
                     case 2: lblReservacionesListaUsrInicio2.Text = reservaciones[1].VueloRutaFecha; GenerarBoletoQR2.Visible = true; goto case 1;
                     case 1: lblReservacionesListaUsrInicio1.Text = reservaciones[0].VueloRutaFecha; GenerarBoletoQR1.Visible = true; goto case 0;
-                    case 0: break;                        
+                    case 0: break;
                 }
                 lblMasReservaciones.Visible = false;
             }
@@ -95,10 +96,10 @@ namespace Interfaz
 
         private void generarRQ(int index)
         {
-            
+
             lblMensajeBoletoSeleccionado.Visible = DescargarQR.Visible = true;
             string textoQR = "Entrada" + reservaciones[index].VueloId.ToString();
-            lblQRInfo.Text = reservaciones[index].VueloRutaFecha;            
+            lblQRInfo.Text = reservaciones[index].VueloRutaFecha;
 
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(textoQR, QRCodeGenerator.ECCLevel.Q);
@@ -106,7 +107,7 @@ namespace Interfaz
             Bitmap qrCodeImage = qrCode.GetGraphic(10);
 
             qrCodeImage = ResizeImage(qrCodeImage, pbQR.Width, pbQR.Height);
-            pbQR.Image = qrCodeImage;            
+            pbQR.Image = qrCodeImage;
         }
 
         private Bitmap ResizeImage(Image image, int width, int height)
@@ -120,7 +121,7 @@ namespace Interfaz
         }
 
         private void DescargarQR_Click(object sender, EventArgs e)
-        {            
+        {
             Bitmap qrCodeImage = (Bitmap)pbQR.Image;
             string rutaArchivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Boleto.png");
             qrCodeImage.Save(rutaArchivo, System.Drawing.Imaging.ImageFormat.Png);

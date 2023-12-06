@@ -37,11 +37,14 @@
             InputNewApellidoPCred = new System.Windows.Forms.TextBox();
             InputNewApellidoMCred = new System.Windows.Forms.TextBox();
             NewPassValid = new System.Windows.Forms.TextBox();
+            panel1 = new System.Windows.Forms.Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnRegUsrNew
             // 
-            btnRegUsrNew.Location = new System.Drawing.Point(146, 295);
+            btnRegUsrNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnRegUsrNew.Location = new System.Drawing.Point(115, 292);
             btnRegUsrNew.Name = "btnRegUsrNew";
             btnRegUsrNew.Size = new System.Drawing.Size(94, 29);
             btnRegUsrNew.TabIndex = 7;
@@ -51,7 +54,7 @@
             // 
             // InputNewUsrCred
             // 
-            InputNewUsrCred.Location = new System.Drawing.Point(56, 195);
+            InputNewUsrCred.Location = new System.Drawing.Point(25, 192);
             InputNewUsrCred.Name = "InputNewUsrCred";
             InputNewUsrCred.PlaceholderText = "Nombre de Usuario";
             InputNewUsrCred.Size = new System.Drawing.Size(300, 27);
@@ -59,7 +62,7 @@
             // 
             // InputNewPassCred
             // 
-            InputNewPassCred.Location = new System.Drawing.Point(56, 228);
+            InputNewPassCred.Location = new System.Drawing.Point(25, 225);
             InputNewPassCred.Name = "InputNewPassCred";
             InputNewPassCred.PlaceholderText = "Contrasena";
             InputNewPassCred.Size = new System.Drawing.Size(300, 27);
@@ -67,7 +70,8 @@
             // 
             // Regresar
             // 
-            Regresar.Location = new System.Drawing.Point(56, 376);
+            Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            Regresar.Location = new System.Drawing.Point(115, 378);
             Regresar.Name = "Regresar";
             Regresar.Size = new System.Drawing.Size(94, 29);
             Regresar.TabIndex = 8;
@@ -78,15 +82,17 @@
             // lblInst1
             // 
             lblInst1.AutoSize = true;
-            lblInst1.Location = new System.Drawing.Point(56, 27);
+            lblInst1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblInst1.ForeColor = System.Drawing.Color.White;
+            lblInst1.Location = new System.Drawing.Point(70, 9);
             lblInst1.Name = "lblInst1";
-            lblInst1.Size = new System.Drawing.Size(208, 20);
+            lblInst1.Size = new System.Drawing.Size(197, 20);
             lblInst1.TabIndex = 0;
-            lblInst1.Text = "Registro de Usuario Nuevo ......";
+            lblInst1.Text = "Registro de Usuario Nuevo";
             // 
             // InputNewNombreCred
             // 
-            InputNewNombreCred.Location = new System.Drawing.Point(56, 59);
+            InputNewNombreCred.Location = new System.Drawing.Point(25, 56);
             InputNewNombreCred.Name = "InputNewNombreCred";
             InputNewNombreCred.PlaceholderText = "Nombre";
             InputNewNombreCred.Size = new System.Drawing.Size(300, 27);
@@ -94,7 +100,7 @@
             // 
             // InputNewApellidoPCred
             // 
-            InputNewApellidoPCred.Location = new System.Drawing.Point(56, 91);
+            InputNewApellidoPCred.Location = new System.Drawing.Point(25, 88);
             InputNewApellidoPCred.Name = "InputNewApellidoPCred";
             InputNewApellidoPCred.PlaceholderText = "Apellido Paterno";
             InputNewApellidoPCred.Size = new System.Drawing.Size(300, 27);
@@ -102,7 +108,7 @@
             // 
             // InputNewApellidoMCred
             // 
-            InputNewApellidoMCred.Location = new System.Drawing.Point(56, 124);
+            InputNewApellidoMCred.Location = new System.Drawing.Point(25, 121);
             InputNewApellidoMCred.Name = "InputNewApellidoMCred";
             InputNewApellidoMCred.PlaceholderText = "Apellido Materno";
             InputNewApellidoMCred.Size = new System.Drawing.Size(300, 27);
@@ -110,28 +116,43 @@
             // 
             // NewPassValid
             // 
-            NewPassValid.Location = new System.Drawing.Point(56, 261);
+            NewPassValid.Location = new System.Drawing.Point(25, 258);
             NewPassValid.Name = "NewPassValid";
             NewPassValid.PlaceholderText = "Reintroduzca Contrasena";
             NewPassValid.Size = new System.Drawing.Size(300, 27);
             NewPassValid.TabIndex = 6;
             // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.FromArgb(6, 54, 122);
+            panel1.Controls.Add(lblInst1);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(349, 40);
+            panel1.TabIndex = 9;
+            // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(427, 451);
+            BackColor = System.Drawing.Color.FromArgb(235, 242, 252);
+            ClientSize = new System.Drawing.Size(349, 451);
+            Controls.Add(panel1);
             Controls.Add(NewPassValid);
             Controls.Add(InputNewApellidoMCred);
             Controls.Add(InputNewApellidoPCred);
             Controls.Add(InputNewNombreCred);
-            Controls.Add(lblInst1);
             Controls.Add(Regresar);
             Controls.Add(InputNewPassCred);
             Controls.Add(InputNewUsrCred);
             Controls.Add(btnRegUsrNew);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "RegistroUsuario";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Registro de usuario nuevo";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,5 +168,6 @@
         private System.Windows.Forms.TextBox InputNewApellidoPCred;
         private System.Windows.Forms.TextBox InputNewApellidoMCred;
         private System.Windows.Forms.TextBox NewPassValid;
+        private System.Windows.Forms.Panel panel1;
     }
 }

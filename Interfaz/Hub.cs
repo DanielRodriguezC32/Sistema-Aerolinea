@@ -32,7 +32,7 @@ namespace Interfaz
         private void MostrarCredencialesDeLogIn()
         {
             lblUser.Text = "Usuario: " + UsuarioActual.Username;
-            lblNom.Text = "Nombre:  " + UsuarioActual.Nombres + " " + UsuarioActual.ApellidoPaterno;
+            //lblNom.Text = "Nombre:  " + UsuarioActual.Nombres + " " + UsuarioActual.ApellidoPaterno;
         }
         // Final de codigo para pruebas
 

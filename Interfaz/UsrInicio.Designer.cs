@@ -28,347 +28,360 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbInicioUsuario = new System.Windows.Forms.GroupBox();
-            this.lblStaticLastNameMUsrInicio = new System.Windows.Forms.Label();
-            this.lblStaticLastNamePUsrInicio = new System.Windows.Forms.Label();
-            this.lblStaticNameUsrInicio = new System.Windows.Forms.Label();
-            this.lblApellidoMUsrInicio = new System.Windows.Forms.Label();
-            this.lblApellidoPUsrInicio = new System.Windows.Forms.Label();
-            this.lblNombreUsrInicio = new System.Windows.Forms.Label();
-            this.gbInicioNotif = new System.Windows.Forms.GroupBox();
-            this.lblNotificacionUsuario = new System.Windows.Forms.Label();
-            this.gbInicioReservaciones = new System.Windows.Forms.GroupBox();
-            this.lblMasReservaciones = new System.Windows.Forms.Label();
-            this.GenerarBoletoQR6 = new System.Windows.Forms.Button();
-            this.GenerarBoletoQR5 = new System.Windows.Forms.Button();
-            this.GenerarBoletoQR4 = new System.Windows.Forms.Button();
-            this.GenerarBoletoQR3 = new System.Windows.Forms.Button();
-            this.GenerarBoletoQR2 = new System.Windows.Forms.Button();
-            this.GenerarBoletoQR1 = new System.Windows.Forms.Button();
-            this.lblReservacionesListaUsrInicio6 = new System.Windows.Forms.Label();
-            this.lblReservacionesListaUsrInicio5 = new System.Windows.Forms.Label();
-            this.lblReservacionesListaUsrInicio4 = new System.Windows.Forms.Label();
-            this.lblReservacionesListaUsrInicio3 = new System.Windows.Forms.Label();
-            this.lblReservacionesListaUsrInicio2 = new System.Windows.Forms.Label();
-            this.lblReservacionesListaUsrInicio1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DescargarQR = new System.Windows.Forms.Button();
-            this.lblQRInfo = new System.Windows.Forms.Label();
-            this.pbQR = new System.Windows.Forms.PictureBox();
-            this.lblMensajeBoletoSeleccionado = new System.Windows.Forms.Label();
-            this.gbInicioUsuario.SuspendLayout();
-            this.gbInicioNotif.SuspendLayout();
-            this.gbInicioReservaciones.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
-            this.SuspendLayout();
+            gbInicioUsuario = new System.Windows.Forms.GroupBox();
+            lblStaticLastNameMUsrInicio = new System.Windows.Forms.Label();
+            lblStaticLastNamePUsrInicio = new System.Windows.Forms.Label();
+            lblStaticNameUsrInicio = new System.Windows.Forms.Label();
+            lblApellidoMUsrInicio = new System.Windows.Forms.Label();
+            lblApellidoPUsrInicio = new System.Windows.Forms.Label();
+            lblNombreUsrInicio = new System.Windows.Forms.Label();
+            gbInicioNotif = new System.Windows.Forms.GroupBox();
+            lblNotificacionUsuario = new System.Windows.Forms.Label();
+            gbInicioReservaciones = new System.Windows.Forms.GroupBox();
+            lblMasReservaciones = new System.Windows.Forms.Label();
+            GenerarBoletoQR6 = new System.Windows.Forms.Button();
+            GenerarBoletoQR5 = new System.Windows.Forms.Button();
+            GenerarBoletoQR4 = new System.Windows.Forms.Button();
+            GenerarBoletoQR3 = new System.Windows.Forms.Button();
+            GenerarBoletoQR2 = new System.Windows.Forms.Button();
+            GenerarBoletoQR1 = new System.Windows.Forms.Button();
+            lblReservacionesListaUsrInicio6 = new System.Windows.Forms.Label();
+            lblReservacionesListaUsrInicio5 = new System.Windows.Forms.Label();
+            lblReservacionesListaUsrInicio4 = new System.Windows.Forms.Label();
+            lblReservacionesListaUsrInicio3 = new System.Windows.Forms.Label();
+            lblReservacionesListaUsrInicio2 = new System.Windows.Forms.Label();
+            lblReservacionesListaUsrInicio1 = new System.Windows.Forms.Label();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            DescargarQR = new System.Windows.Forms.Button();
+            lblQRInfo = new System.Windows.Forms.Label();
+            pbQR = new System.Windows.Forms.PictureBox();
+            lblMensajeBoletoSeleccionado = new System.Windows.Forms.Label();
+            gbInicioUsuario.SuspendLayout();
+            gbInicioNotif.SuspendLayout();
+            gbInicioReservaciones.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbQR).BeginInit();
+            SuspendLayout();
             // 
             // gbInicioUsuario
             // 
-            this.gbInicioUsuario.Controls.Add(this.lblStaticLastNameMUsrInicio);
-            this.gbInicioUsuario.Controls.Add(this.lblStaticLastNamePUsrInicio);
-            this.gbInicioUsuario.Controls.Add(this.lblStaticNameUsrInicio);
-            this.gbInicioUsuario.Controls.Add(this.lblApellidoMUsrInicio);
-            this.gbInicioUsuario.Controls.Add(this.lblApellidoPUsrInicio);
-            this.gbInicioUsuario.Controls.Add(this.lblNombreUsrInicio);
-            this.gbInicioUsuario.Location = new System.Drawing.Point(10, 10);
-            this.gbInicioUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioUsuario.Name = "gbInicioUsuario";
-            this.gbInicioUsuario.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioUsuario.Size = new System.Drawing.Size(679, 120);
-            this.gbInicioUsuario.TabIndex = 0;
-            this.gbInicioUsuario.TabStop = false;
-            this.gbInicioUsuario.Text = "Usuario";
+            gbInicioUsuario.Controls.Add(lblStaticLastNameMUsrInicio);
+            gbInicioUsuario.Controls.Add(lblStaticLastNamePUsrInicio);
+            gbInicioUsuario.Controls.Add(lblStaticNameUsrInicio);
+            gbInicioUsuario.Controls.Add(lblApellidoMUsrInicio);
+            gbInicioUsuario.Controls.Add(lblApellidoPUsrInicio);
+            gbInicioUsuario.Controls.Add(lblNombreUsrInicio);
+            gbInicioUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            gbInicioUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
+            gbInicioUsuario.Location = new System.Drawing.Point(11, 13);
+            gbInicioUsuario.Name = "gbInicioUsuario";
+            gbInicioUsuario.Size = new System.Drawing.Size(776, 160);
+            gbInicioUsuario.TabIndex = 0;
+            gbInicioUsuario.TabStop = false;
+            gbInicioUsuario.Text = "Usuario";
             // 
             // lblStaticLastNameMUsrInicio
             // 
-            this.lblStaticLastNameMUsrInicio.AutoSize = true;
-            this.lblStaticLastNameMUsrInicio.Location = new System.Drawing.Point(18, 57);
-            this.lblStaticLastNameMUsrInicio.Name = "lblStaticLastNameMUsrInicio";
-            this.lblStaticLastNameMUsrInicio.Size = new System.Drawing.Size(98, 15);
-            this.lblStaticLastNameMUsrInicio.TabIndex = 5;
-            this.lblStaticLastNameMUsrInicio.Text = "Apellido paterno:";
+            lblStaticLastNameMUsrInicio.AutoSize = true;
+            lblStaticLastNameMUsrInicio.Location = new System.Drawing.Point(21, 76);
+            lblStaticLastNameMUsrInicio.Name = "lblStaticLastNameMUsrInicio";
+            lblStaticLastNameMUsrInicio.Size = new System.Drawing.Size(128, 20);
+            lblStaticLastNameMUsrInicio.TabIndex = 5;
+            lblStaticLastNameMUsrInicio.Text = "Apellido paterno:";
             // 
             // lblStaticLastNamePUsrInicio
             // 
-            this.lblStaticLastNamePUsrInicio.AutoSize = true;
-            this.lblStaticLastNamePUsrInicio.Location = new System.Drawing.Point(18, 88);
-            this.lblStaticLastNamePUsrInicio.Name = "lblStaticLastNamePUsrInicio";
-            this.lblStaticLastNamePUsrInicio.Size = new System.Drawing.Size(102, 15);
-            this.lblStaticLastNamePUsrInicio.TabIndex = 4;
-            this.lblStaticLastNamePUsrInicio.Text = "Apellido materno:";
+            lblStaticLastNamePUsrInicio.AutoSize = true;
+            lblStaticLastNamePUsrInicio.Location = new System.Drawing.Point(21, 117);
+            lblStaticLastNamePUsrInicio.Name = "lblStaticLastNamePUsrInicio";
+            lblStaticLastNamePUsrInicio.Size = new System.Drawing.Size(132, 20);
+            lblStaticLastNamePUsrInicio.TabIndex = 4;
+            lblStaticLastNamePUsrInicio.Text = "Apellido materno:";
             // 
             // lblStaticNameUsrInicio
             // 
-            this.lblStaticNameUsrInicio.AutoSize = true;
-            this.lblStaticNameUsrInicio.Location = new System.Drawing.Point(18, 30);
-            this.lblStaticNameUsrInicio.Name = "lblStaticNameUsrInicio";
-            this.lblStaticNameUsrInicio.Size = new System.Drawing.Size(70, 15);
-            this.lblStaticNameUsrInicio.TabIndex = 3;
-            this.lblStaticNameUsrInicio.Text = "Nombre (s):";
+            lblStaticNameUsrInicio.AutoSize = true;
+            lblStaticNameUsrInicio.Location = new System.Drawing.Point(21, 40);
+            lblStaticNameUsrInicio.Name = "lblStaticNameUsrInicio";
+            lblStaticNameUsrInicio.Size = new System.Drawing.Size(90, 20);
+            lblStaticNameUsrInicio.TabIndex = 3;
+            lblStaticNameUsrInicio.Text = "Nombre (s):";
             // 
             // lblApellidoMUsrInicio
             // 
-            this.lblApellidoMUsrInicio.AutoSize = true;
-            this.lblApellidoMUsrInicio.Location = new System.Drawing.Point(132, 88);
-            this.lblApellidoMUsrInicio.Name = "lblApellidoMUsrInicio";
-            this.lblApellidoMUsrInicio.Size = new System.Drawing.Size(0, 15);
-            this.lblApellidoMUsrInicio.TabIndex = 2;
+            lblApellidoMUsrInicio.AutoSize = true;
+            lblApellidoMUsrInicio.Location = new System.Drawing.Point(151, 117);
+            lblApellidoMUsrInicio.Name = "lblApellidoMUsrInicio";
+            lblApellidoMUsrInicio.Size = new System.Drawing.Size(0, 20);
+            lblApellidoMUsrInicio.TabIndex = 2;
             // 
             // lblApellidoPUsrInicio
             // 
-            this.lblApellidoPUsrInicio.AutoSize = true;
-            this.lblApellidoPUsrInicio.Location = new System.Drawing.Point(132, 57);
-            this.lblApellidoPUsrInicio.Name = "lblApellidoPUsrInicio";
-            this.lblApellidoPUsrInicio.Size = new System.Drawing.Size(0, 15);
-            this.lblApellidoPUsrInicio.TabIndex = 1;
+            lblApellidoPUsrInicio.AutoSize = true;
+            lblApellidoPUsrInicio.Location = new System.Drawing.Point(151, 76);
+            lblApellidoPUsrInicio.Name = "lblApellidoPUsrInicio";
+            lblApellidoPUsrInicio.Size = new System.Drawing.Size(0, 20);
+            lblApellidoPUsrInicio.TabIndex = 1;
             // 
             // lblNombreUsrInicio
             // 
-            this.lblNombreUsrInicio.AutoSize = true;
-            this.lblNombreUsrInicio.Location = new System.Drawing.Point(132, 30);
-            this.lblNombreUsrInicio.Name = "lblNombreUsrInicio";
-            this.lblNombreUsrInicio.Size = new System.Drawing.Size(0, 15);
-            this.lblNombreUsrInicio.TabIndex = 0;
+            lblNombreUsrInicio.AutoSize = true;
+            lblNombreUsrInicio.Location = new System.Drawing.Point(151, 40);
+            lblNombreUsrInicio.Name = "lblNombreUsrInicio";
+            lblNombreUsrInicio.Size = new System.Drawing.Size(0, 20);
+            lblNombreUsrInicio.TabIndex = 0;
             // 
             // gbInicioNotif
             // 
-            this.gbInicioNotif.Controls.Add(this.lblNotificacionUsuario);
-            this.gbInicioNotif.Location = new System.Drawing.Point(10, 135);
-            this.gbInicioNotif.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioNotif.Name = "gbInicioNotif";
-            this.gbInicioNotif.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioNotif.Size = new System.Drawing.Size(679, 62);
-            this.gbInicioNotif.TabIndex = 1;
-            this.gbInicioNotif.TabStop = false;
-            this.gbInicioNotif.Text = "Notificaciones";
+            gbInicioNotif.Controls.Add(lblNotificacionUsuario);
+            gbInicioNotif.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            gbInicioNotif.Location = new System.Drawing.Point(11, 180);
+            gbInicioNotif.Name = "gbInicioNotif";
+            gbInicioNotif.Size = new System.Drawing.Size(776, 83);
+            gbInicioNotif.TabIndex = 1;
+            gbInicioNotif.TabStop = false;
+            gbInicioNotif.Text = "Notificaciones";
             // 
             // lblNotificacionUsuario
             // 
-            this.lblNotificacionUsuario.AutoSize = true;
-            this.lblNotificacionUsuario.Location = new System.Drawing.Point(18, 32);
-            this.lblNotificacionUsuario.Name = "lblNotificacionUsuario";
-            this.lblNotificacionUsuario.Size = new System.Drawing.Size(198, 15);
-            this.lblNotificacionUsuario.TabIndex = 0;
-            this.lblNotificacionUsuario.Text = "Sin notificaciones por el momento...";
+            lblNotificacionUsuario.AutoSize = true;
+            lblNotificacionUsuario.Location = new System.Drawing.Point(21, 43);
+            lblNotificacionUsuario.Name = "lblNotificacionUsuario";
+            lblNotificacionUsuario.Size = new System.Drawing.Size(254, 20);
+            lblNotificacionUsuario.TabIndex = 0;
+            lblNotificacionUsuario.Text = "Sin notificaciones por el momento...";
             // 
             // gbInicioReservaciones
             // 
-            this.gbInicioReservaciones.Controls.Add(this.lblMasReservaciones);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR6);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR5);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR4);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR3);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR2);
-            this.gbInicioReservaciones.Controls.Add(this.GenerarBoletoQR1);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio6);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio5);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio4);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio3);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio2);
-            this.gbInicioReservaciones.Controls.Add(this.lblReservacionesListaUsrInicio1);
-            this.gbInicioReservaciones.Location = new System.Drawing.Point(10, 208);
-            this.gbInicioReservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioReservaciones.Name = "gbInicioReservaciones";
-            this.gbInicioReservaciones.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbInicioReservaciones.Size = new System.Drawing.Size(679, 203);
-            this.gbInicioReservaciones.TabIndex = 2;
-            this.gbInicioReservaciones.TabStop = false;
-            this.gbInicioReservaciones.Text = "Reservaciones";
+            gbInicioReservaciones.Controls.Add(lblMasReservaciones);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR6);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR5);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR4);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR3);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR2);
+            gbInicioReservaciones.Controls.Add(GenerarBoletoQR1);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio6);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio5);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio4);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio3);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio2);
+            gbInicioReservaciones.Controls.Add(lblReservacionesListaUsrInicio1);
+            gbInicioReservaciones.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            gbInicioReservaciones.Location = new System.Drawing.Point(11, 277);
+            gbInicioReservaciones.Name = "gbInicioReservaciones";
+            gbInicioReservaciones.Size = new System.Drawing.Size(776, 271);
+            gbInicioReservaciones.TabIndex = 2;
+            gbInicioReservaciones.TabStop = false;
+            gbInicioReservaciones.Text = "Reservaciones";
             // 
             // lblMasReservaciones
             // 
-            this.lblMasReservaciones.AutoSize = true;
-            this.lblMasReservaciones.Location = new System.Drawing.Point(34, 172);
-            this.lblMasReservaciones.Name = "lblMasReservaciones";
-            this.lblMasReservaciones.Size = new System.Drawing.Size(136, 15);
-            this.lblMasReservaciones.TabIndex = 12;
-            this.lblMasReservaciones.Text = "Hay mas reservaciones...";
-            this.lblMasReservaciones.Visible = false;
+            lblMasReservaciones.AutoSize = true;
+            lblMasReservaciones.Location = new System.Drawing.Point(39, 229);
+            lblMasReservaciones.Name = "lblMasReservaciones";
+            lblMasReservaciones.Size = new System.Drawing.Size(177, 20);
+            lblMasReservaciones.TabIndex = 12;
+            lblMasReservaciones.Text = "Hay mas reservaciones...";
+            lblMasReservaciones.Visible = false;
             // 
             // GenerarBoletoQR6
             // 
-            this.GenerarBoletoQR6.Location = new System.Drawing.Point(13, 140);
-            this.GenerarBoletoQR6.Name = "GenerarBoletoQR6";
-            this.GenerarBoletoQR6.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR6.TabIndex = 11;
-            this.GenerarBoletoQR6.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR6.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR6.Click += new System.EventHandler(this.GenerarBoletoQR6_Click);
+            GenerarBoletoQR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR6.Location = new System.Drawing.Point(15, 187);
+            GenerarBoletoQR6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR6.Name = "GenerarBoletoQR6";
+            GenerarBoletoQR6.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR6.TabIndex = 11;
+            GenerarBoletoQR6.Text = "Generar Boleto QR";
+            GenerarBoletoQR6.UseVisualStyleBackColor = true;
+            GenerarBoletoQR6.Click += GenerarBoletoQR6_Click;
             // 
             // GenerarBoletoQR5
             // 
-            this.GenerarBoletoQR5.Location = new System.Drawing.Point(13, 117);
-            this.GenerarBoletoQR5.Name = "GenerarBoletoQR5";
-            this.GenerarBoletoQR5.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR5.TabIndex = 10;
-            this.GenerarBoletoQR5.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR5.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR5.Click += new System.EventHandler(this.GenerarBoletoQR5_Click);
+            GenerarBoletoQR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR5.Location = new System.Drawing.Point(15, 156);
+            GenerarBoletoQR5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR5.Name = "GenerarBoletoQR5";
+            GenerarBoletoQR5.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR5.TabIndex = 10;
+            GenerarBoletoQR5.Text = "Generar Boleto QR";
+            GenerarBoletoQR5.UseVisualStyleBackColor = true;
+            GenerarBoletoQR5.Click += GenerarBoletoQR5_Click;
             // 
             // GenerarBoletoQR4
             // 
-            this.GenerarBoletoQR4.Location = new System.Drawing.Point(13, 94);
-            this.GenerarBoletoQR4.Name = "GenerarBoletoQR4";
-            this.GenerarBoletoQR4.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR4.TabIndex = 9;
-            this.GenerarBoletoQR4.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR4.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR4.Click += new System.EventHandler(this.GenerarBoletoQR4_Click);
+            GenerarBoletoQR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR4.Location = new System.Drawing.Point(15, 125);
+            GenerarBoletoQR4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR4.Name = "GenerarBoletoQR4";
+            GenerarBoletoQR4.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR4.TabIndex = 9;
+            GenerarBoletoQR4.Text = "Generar Boleto QR";
+            GenerarBoletoQR4.UseVisualStyleBackColor = true;
+            GenerarBoletoQR4.Click += GenerarBoletoQR4_Click;
             // 
             // GenerarBoletoQR3
             // 
-            this.GenerarBoletoQR3.Location = new System.Drawing.Point(13, 72);
-            this.GenerarBoletoQR3.Name = "GenerarBoletoQR3";
-            this.GenerarBoletoQR3.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR3.TabIndex = 8;
-            this.GenerarBoletoQR3.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR3.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR3.Click += new System.EventHandler(this.GenerarBoletoQR3_Click);
+            GenerarBoletoQR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR3.Location = new System.Drawing.Point(15, 96);
+            GenerarBoletoQR3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR3.Name = "GenerarBoletoQR3";
+            GenerarBoletoQR3.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR3.TabIndex = 8;
+            GenerarBoletoQR3.Text = "Generar Boleto QR";
+            GenerarBoletoQR3.UseVisualStyleBackColor = true;
+            GenerarBoletoQR3.Click += GenerarBoletoQR3_Click;
             // 
             // GenerarBoletoQR2
             // 
-            this.GenerarBoletoQR2.Location = new System.Drawing.Point(13, 49);
-            this.GenerarBoletoQR2.Name = "GenerarBoletoQR2";
-            this.GenerarBoletoQR2.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR2.TabIndex = 7;
-            this.GenerarBoletoQR2.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR2.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR2.Click += new System.EventHandler(this.GenerarBoletoQR2_Click);
+            GenerarBoletoQR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR2.Location = new System.Drawing.Point(15, 65);
+            GenerarBoletoQR2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR2.Name = "GenerarBoletoQR2";
+            GenerarBoletoQR2.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR2.TabIndex = 7;
+            GenerarBoletoQR2.Text = "Generar Boleto QR";
+            GenerarBoletoQR2.UseVisualStyleBackColor = true;
+            GenerarBoletoQR2.Click += GenerarBoletoQR2_Click;
             // 
             // GenerarBoletoQR1
             // 
-            this.GenerarBoletoQR1.Location = new System.Drawing.Point(13, 26);
-            this.GenerarBoletoQR1.Name = "GenerarBoletoQR1";
-            this.GenerarBoletoQR1.Size = new System.Drawing.Size(119, 23);
-            this.GenerarBoletoQR1.TabIndex = 6;
-            this.GenerarBoletoQR1.Text = "Generar Boleto QR";
-            this.GenerarBoletoQR1.UseVisualStyleBackColor = true;
-            this.GenerarBoletoQR1.Click += new System.EventHandler(this.GenerarBoletoQR1_Click);
+            GenerarBoletoQR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            GenerarBoletoQR1.Location = new System.Drawing.Point(15, 35);
+            GenerarBoletoQR1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerarBoletoQR1.Name = "GenerarBoletoQR1";
+            GenerarBoletoQR1.Size = new System.Drawing.Size(136, 31);
+            GenerarBoletoQR1.TabIndex = 6;
+            GenerarBoletoQR1.Text = "Generar Boleto QR";
+            GenerarBoletoQR1.UseVisualStyleBackColor = true;
+            GenerarBoletoQR1.Click += GenerarBoletoQR1_Click;
             // 
             // lblReservacionesListaUsrInicio6
             // 
-            this.lblReservacionesListaUsrInicio6.AutoSize = true;
-            this.lblReservacionesListaUsrInicio6.Location = new System.Drawing.Point(138, 144);
-            this.lblReservacionesListaUsrInicio6.Name = "lblReservacionesListaUsrInicio6";
-            this.lblReservacionesListaUsrInicio6.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio6.TabIndex = 5;
+            lblReservacionesListaUsrInicio6.AutoSize = true;
+            lblReservacionesListaUsrInicio6.Location = new System.Drawing.Point(158, 192);
+            lblReservacionesListaUsrInicio6.Name = "lblReservacionesListaUsrInicio6";
+            lblReservacionesListaUsrInicio6.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio6.TabIndex = 5;
             // 
             // lblReservacionesListaUsrInicio5
             // 
-            this.lblReservacionesListaUsrInicio5.AutoSize = true;
-            this.lblReservacionesListaUsrInicio5.Location = new System.Drawing.Point(138, 121);
-            this.lblReservacionesListaUsrInicio5.Name = "lblReservacionesListaUsrInicio5";
-            this.lblReservacionesListaUsrInicio5.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio5.TabIndex = 4;
+            lblReservacionesListaUsrInicio5.AutoSize = true;
+            lblReservacionesListaUsrInicio5.Location = new System.Drawing.Point(158, 161);
+            lblReservacionesListaUsrInicio5.Name = "lblReservacionesListaUsrInicio5";
+            lblReservacionesListaUsrInicio5.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio5.TabIndex = 4;
             // 
             // lblReservacionesListaUsrInicio4
             // 
-            this.lblReservacionesListaUsrInicio4.AutoSize = true;
-            this.lblReservacionesListaUsrInicio4.Location = new System.Drawing.Point(138, 98);
-            this.lblReservacionesListaUsrInicio4.Name = "lblReservacionesListaUsrInicio4";
-            this.lblReservacionesListaUsrInicio4.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio4.TabIndex = 3;
+            lblReservacionesListaUsrInicio4.AutoSize = true;
+            lblReservacionesListaUsrInicio4.Location = new System.Drawing.Point(158, 131);
+            lblReservacionesListaUsrInicio4.Name = "lblReservacionesListaUsrInicio4";
+            lblReservacionesListaUsrInicio4.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio4.TabIndex = 3;
             // 
             // lblReservacionesListaUsrInicio3
             // 
-            this.lblReservacionesListaUsrInicio3.AutoSize = true;
-            this.lblReservacionesListaUsrInicio3.Location = new System.Drawing.Point(138, 76);
-            this.lblReservacionesListaUsrInicio3.Name = "lblReservacionesListaUsrInicio3";
-            this.lblReservacionesListaUsrInicio3.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio3.TabIndex = 2;
+            lblReservacionesListaUsrInicio3.AutoSize = true;
+            lblReservacionesListaUsrInicio3.Location = new System.Drawing.Point(158, 101);
+            lblReservacionesListaUsrInicio3.Name = "lblReservacionesListaUsrInicio3";
+            lblReservacionesListaUsrInicio3.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio3.TabIndex = 2;
             // 
             // lblReservacionesListaUsrInicio2
             // 
-            this.lblReservacionesListaUsrInicio2.AutoSize = true;
-            this.lblReservacionesListaUsrInicio2.Location = new System.Drawing.Point(138, 53);
-            this.lblReservacionesListaUsrInicio2.Name = "lblReservacionesListaUsrInicio2";
-            this.lblReservacionesListaUsrInicio2.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio2.TabIndex = 1;
+            lblReservacionesListaUsrInicio2.AutoSize = true;
+            lblReservacionesListaUsrInicio2.Location = new System.Drawing.Point(158, 71);
+            lblReservacionesListaUsrInicio2.Name = "lblReservacionesListaUsrInicio2";
+            lblReservacionesListaUsrInicio2.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio2.TabIndex = 1;
             // 
             // lblReservacionesListaUsrInicio1
             // 
-            this.lblReservacionesListaUsrInicio1.AutoSize = true;
-            this.lblReservacionesListaUsrInicio1.Location = new System.Drawing.Point(138, 30);
-            this.lblReservacionesListaUsrInicio1.Name = "lblReservacionesListaUsrInicio1";
-            this.lblReservacionesListaUsrInicio1.Size = new System.Drawing.Size(0, 15);
-            this.lblReservacionesListaUsrInicio1.TabIndex = 0;
+            lblReservacionesListaUsrInicio1.AutoSize = true;
+            lblReservacionesListaUsrInicio1.Location = new System.Drawing.Point(158, 40);
+            lblReservacionesListaUsrInicio1.Name = "lblReservacionesListaUsrInicio1";
+            lblReservacionesListaUsrInicio1.Size = new System.Drawing.Size(0, 20);
+            lblReservacionesListaUsrInicio1.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DescargarQR);
-            this.groupBox1.Controls.Add(this.lblQRInfo);
-            this.groupBox1.Controls.Add(this.pbQR);
-            this.groupBox1.Controls.Add(this.lblMensajeBoletoSeleccionado);
-            this.groupBox1.Location = new System.Drawing.Point(10, 415);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(679, 188);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Boleto seleccionado";
+            groupBox1.Controls.Add(DescargarQR);
+            groupBox1.Controls.Add(lblQRInfo);
+            groupBox1.Controls.Add(pbQR);
+            groupBox1.Controls.Add(lblMensajeBoletoSeleccionado);
+            groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            groupBox1.Location = new System.Drawing.Point(11, 553);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(776, 251);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Boleto seleccionado";
             // 
             // DescargarQR
             // 
-            this.DescargarQR.Location = new System.Drawing.Point(167, 100);
-            this.DescargarQR.Name = "DescargarQR";
-            this.DescargarQR.Size = new System.Drawing.Size(154, 23);
-            this.DescargarQR.TabIndex = 3;
-            this.DescargarQR.Text = "Descargar QR a Escritorio";
-            this.DescargarQR.UseVisualStyleBackColor = true;
-            this.DescargarQR.Visible = false;
-            this.DescargarQR.Click += new System.EventHandler(this.DescargarQR_Click);
+            DescargarQR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            DescargarQR.Location = new System.Drawing.Point(191, 133);
+            DescargarQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            DescargarQR.Name = "DescargarQR";
+            DescargarQR.Size = new System.Drawing.Size(176, 31);
+            DescargarQR.TabIndex = 3;
+            DescargarQR.Text = "Descargar QR a Escritorio";
+            DescargarQR.UseVisualStyleBackColor = true;
+            DescargarQR.Visible = false;
+            DescargarQR.Click += DescargarQR_Click;
             // 
             // lblQRInfo
             // 
-            this.lblQRInfo.AutoSize = true;
-            this.lblQRInfo.Location = new System.Drawing.Point(167, 62);
-            this.lblQRInfo.Name = "lblQRInfo";
-            this.lblQRInfo.Size = new System.Drawing.Size(0, 15);
-            this.lblQRInfo.TabIndex = 2;
+            lblQRInfo.AutoSize = true;
+            lblQRInfo.Location = new System.Drawing.Point(191, 83);
+            lblQRInfo.Name = "lblQRInfo";
+            lblQRInfo.Size = new System.Drawing.Size(0, 20);
+            lblQRInfo.TabIndex = 2;
             // 
             // pbQR
             // 
-            this.pbQR.Location = new System.Drawing.Point(18, 50);
-            this.pbQR.Name = "pbQR";
-            this.pbQR.Size = new System.Drawing.Size(130, 130);
-            this.pbQR.TabIndex = 1;
-            this.pbQR.TabStop = false;
+            pbQR.Location = new System.Drawing.Point(21, 67);
+            pbQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pbQR.Name = "pbQR";
+            pbQR.Size = new System.Drawing.Size(149, 173);
+            pbQR.TabIndex = 1;
+            pbQR.TabStop = false;
             // 
             // lblMensajeBoletoSeleccionado
             // 
-            this.lblMensajeBoletoSeleccionado.AutoSize = true;
-            this.lblMensajeBoletoSeleccionado.Location = new System.Drawing.Point(18, 31);
-            this.lblMensajeBoletoSeleccionado.Name = "lblMensajeBoletoSeleccionado";
-            this.lblMensajeBoletoSeleccionado.Size = new System.Drawing.Size(217, 15);
-            this.lblMensajeBoletoSeleccionado.TabIndex = 0;
-            this.lblMensajeBoletoSeleccionado.Text = "Tómele foto o descargue el codigo QR...";
-            this.lblMensajeBoletoSeleccionado.Visible = false;
+            lblMensajeBoletoSeleccionado.AutoSize = true;
+            lblMensajeBoletoSeleccionado.Location = new System.Drawing.Point(21, 41);
+            lblMensajeBoletoSeleccionado.Name = "lblMensajeBoletoSeleccionado";
+            lblMensajeBoletoSeleccionado.Size = new System.Drawing.Size(280, 20);
+            lblMensajeBoletoSeleccionado.TabIndex = 0;
+            lblMensajeBoletoSeleccionado.Text = "Tómele foto o descargue el codigo QR...";
+            lblMensajeBoletoSeleccionado.Visible = false;
             // 
             // UsrInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 613);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gbInicioReservaciones);
-            this.Controls.Add(this.gbInicioNotif);
-            this.Controls.Add(this.gbInicioUsuario);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UsrInicio";
-            this.Text = "UsrInicio";
-            this.gbInicioUsuario.ResumeLayout(false);
-            this.gbInicioUsuario.PerformLayout();
-            this.gbInicioNotif.ResumeLayout(false);
-            this.gbInicioNotif.PerformLayout();
-            this.gbInicioReservaciones.ResumeLayout(false);
-            this.gbInicioReservaciones.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            BackColor = System.Drawing.Color.FromArgb(235, 242, 252);
+            ClientSize = new System.Drawing.Size(808, 647);
+            Controls.Add(groupBox1);
+            Controls.Add(gbInicioReservaciones);
+            Controls.Add(gbInicioNotif);
+            Controls.Add(gbInicioUsuario);
+            Name = "UsrInicio";
+            Text = "UsrInicio";
+            gbInicioUsuario.ResumeLayout(false);
+            gbInicioUsuario.PerformLayout();
+            gbInicioNotif.ResumeLayout(false);
+            gbInicioNotif.PerformLayout();
+            gbInicioReservaciones.ResumeLayout(false);
+            gbInicioReservaciones.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbQR).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
